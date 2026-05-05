@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhruva Valluru</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grain"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">D.VALLURU</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home">[ HOME ]</a>
+            <a href="#" class="nav-link" data-page="projects">[ PROJECTS ]</a>
+            <a href="#" class="nav-link" data-page="about">[ ABOUT ]</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <!-- Home Page -->
+        <section class="page active" id="home">
+            <div class="home-container">
+                <div class="home-left">
+                    <p class="intro-label">Hello, my name is</p>
+                    <h1 class="hero-name">D H R U V A<br>V A L L U R U</h1>
+                    <div class="hero-tagline">
+                        <span class="tag-item">Builder</span>
+                        <span class="tag-sep">/</span>
+                        <span class="tag-item">Inventor</span>
+                        <span class="tag-sep">/</span>
+                        <span class="tag-item">Student</span>
+                    </div>
+                    <div class="home-cta">
+                        <a href="#" class="cta-btn" data-page="projects">EXPLORE PROJECTS →</a>
+                        <a href="#" class="cta-btn cta-ghost" data-page="about">ABOUT ME</a>
+                    </div>
+                </div>
+                <div class="home-right">
+                    <div class="headshot-wrapper">
+                        <div class="headshot-label">[ HEADSHOT ]</div>
+                        <div class="headshot-frame">
+                            <img src="assets/headshot.jpg" alt="Dhruva Valluru" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="headshot-placeholder">
+                                <span>DV</span>
+                            </div>
+                        </div>
+                        <div class="headshot-socials">
+                            <a href="mailto:dhruva.valluru@gmail.com" class="headshot-social-icon social-gmail" title="Gmail">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 18h-2V9.25L12 13 6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru" class="headshot-social-icon social-github" target="_blank" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dhruva-valluru-37441293/" class="headshot-social-icon social-linkedin" target="_blank" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section class="page" id="projects">
+            <div class="projects-container">
+                <div class="page-header">
+                    <span class="header-prefix">/ </span>
+                    <h2 class="page-title">P R O J E C T S</h2>
+                </div>
+                <p class="page-desc">Selected projects and experiments.</p>
+
+                <div class="projects-grid">
+                    <div class="project-box">
+                        <div class="project-img-wrapper cubo-img">
+                            <img src="assets/cubo.png" alt="CUBO">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">[ MODULE_01 ]</span>
+                            <h3 class="project-title">C U B O</h3>
+                            <p class="project-body">A teen-led AI-based smart assistant built to keep you focused. Compact dashboard device using edge AI to monitor driver attention and instantly alert if distraction is detected.</p>
+                            <div class="project-tech">
+                                <code>Edge AI</code>
+                                <code>Hardware</code>
+                                <code>Computer Vision</code>
+                                <code>Startup</code>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" title="Website">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                    <span>cubocruise.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-connector">
+                        <div class="connector-line"></div>
+                        <span class="connector-label">// CONNECTED MODULE</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <div class="project-box reverse project-sub">
+                        <div class="project-img-wrapper cubo-app-img">
+                            <img src="assets/cubo-app.png" alt="CUBO Synced App">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">[ MODULE_01b ]</span>
+                            <h3 class="project-title">C U B O &nbsp; S Y N C E D &nbsp; A P P</h3>
+                            <p class="project-body">An AI-powered driving safety app that connects to the CUBO dash device to monitor distracted driving, track driver behavior, and give parents or users clear reports to improve safety.</p>
+                            <div class="project-tech">
+                                <code>React Native</code>
+                                <code>TypeScript</code>
+                                <code>Expo</code>
+                                <code>Mobile App</code>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/DhruvaValluru/CUBO-APP-SYNCE4DDEVICE" class="project-link-icon project-link-github" target="_blank" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                    <span>Code</span>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=7hDUQYFQ1TE" class="project-link-icon project-link-youtube" target="_blank" title="Demo Video">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                    <span>Demo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse">
+                        <div class="project-img-wrapper">
+                            <img src="assets/brainwaves.jpg" alt="Brainwaves">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">[ MODULE_02 ]</span>
+                            <h3 class="project-title">B R A I N W A V E S</h3>
+                            <p class="project-body">My partner Ketav and I discovered three novel interregional communication patterns in EEG signals that may reveal early signs of neurological decline. We then coded a computational algorithm around these patterns to analyze brain-region interactions and predict changes in brain state.</p>
+                            <div class="project-tech">
+                                <code>EEG</code>
+                                <code>Deep Learning</code>
+                                <code>Neurotech</code>
+                                <code>Research</code>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-link-icon project-link-github" target="_blank" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                    <span>BFI-Pipeline</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box">
+                        <div class="project-img-wrapper">
+                            <img src="assets/closet-combos.jpg" alt="Closet Combos">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-label">[ MODULE_03 ]</span>
+                            <h3 class="project-title">C L O S E T &nbsp; C O M B O S</h3>
+                            <p class="project-body">An AI wardrobe app where users upload their clothes to get outfit combinations from what they already own. It also recommends new clothing that perfectly matches their current wardrobe, helping users buy smarter.</p>
+                            <div class="project-tech">
+                                <code>AI</code>
+                                <code>Fashion</code>
+                                <code>App</code>
+                                <code>E-commerce</code>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/DhruvaValluru/ClosetCombos" class="project-link-icon project-link-github" target="_blank" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                    <span>Code</span>
+                                </a>
+                                <a href="https://www.tiktok.com/@closet_combos" class="project-link-icon project-link-tiktok" target="_blank" title="TikTok">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.4a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.83z"/></svg>
+                                    <span>@closet_combos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section class="page" id="about">
+            <div class="about-container">
+                <div class="page-header">
+                    <span class="header-prefix">/ </span>
+                    <h2 class="page-title">A B O U T</h2>
+                </div>
+                <div class="about-divider"></div>
+
+                <div class="about-layout">
+                    <div class="about-profile">
+                        <div class="profile-photo">
+                            <img src="assets/headshot.jpg" alt="Dhruva Valluru">
+                        </div>
+                        <h3 class="profile-name">Dhruva Valluru</h3>
+                        <p class="profile-role">Founder @ CUBO</p>
+                        <div class="profile-socials">
+                            <a href="mailto:dhruva.valluru@gmail.com" class="social-icon social-gmail" title="Gmail">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 18h-2V9.25L12 13 6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru" class="social-icon social-github" target="_blank" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dhruva-valluru-37441293/" class="social-icon social-linkedin" target="_blank" title="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-bio">
+                        <p>AKA the youngest in CES history to present at the ripe age of 15 — I'm currently in North Carolina finishing high school while building <strong>CUBO</strong>, a driver-safety hardware startup using edge AI to reduce distracted driving.</p>
+                        <p>In the past, I've spent time building EEG-based neurological prediction systems, low-cost hardware prototypes, robotics projects, and convincing more students to build cool things.</p>
+                        <p>I've recently become increasingly interested in doing cool AI stuff — especially where AI meets hardware, safety, research, and real-world products people can actually use.</p>
+                        <p class="contact-line">Feel free to reach out about AI, startups, hardware, robotics, research, or anything interesting at <a href="mailto:dhruva.valluru@gmail.com">dhruva.valluru@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
