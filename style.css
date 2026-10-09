@@ -544,6 +544,33 @@ html, body {
     max-width: 600px;
 }
 
+.project-affiliation {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-left: 3px solid #B31B1B;
+    background: var(--surface);
+    max-width: 600px;
+}
+
+.affiliation-logo {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+}
+
+.affiliation-text {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+}
+
 .project-tech {
     display: flex;
     flex-wrap: wrap;
