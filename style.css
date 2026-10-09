@@ -12,6 +12,7 @@
     --text: #e8e8e8;
     --text-dim: #666666;
     --text-muted: #444444;
+    --text-soft: #b4b4b4;
     --accent: #ffffff;
     --accent-blue: #60a5fa;
     --accent-cyan: #22d3ee;
@@ -538,10 +539,119 @@ html, body {
 
 .project-body {
     font-size: 0.9rem;
-    color: var(--text-dim);
+    color: var(--text-soft);
     line-height: 1.7;
     margin-bottom: 16px;
     max-width: 600px;
+}
+
+.project-body-short {
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.project-body strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.project-more {
+    margin-bottom: 18px;
+    max-width: 600px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s;
+}
+
+.project-more:hover,
+.project-more[open] {
+    border-color: var(--border-hover);
+}
+
+.project-more-toggle {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-soft);
+    user-select: none;
+}
+
+.project-more-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.project-more-toggle:hover {
+    color: var(--text);
+}
+
+.project-more-arrow {
+    font-size: 0.55rem;
+    transition: transform 0.2s;
+}
+
+.project-more[open] .project-more-arrow {
+    transform: rotate(180deg);
+}
+
+.project-more-content {
+    padding: 4px 14px 14px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+}
+
+.project-more-content p {
+    margin-top: 10px;
+}
+
+.project-more-content strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.project-more-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.project-more-link:hover {
+    border-bottom-color: var(--accent-blue);
+}
+
+.project-affiliation {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-left: 3px solid #B31B1B;
+    background: var(--surface);
+    max-width: 600px;
+}
+
+.affiliation-logo {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+}
+
+.affiliation-text {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--text-soft);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
 }
 
 .project-tech {
@@ -556,7 +666,7 @@ html, body {
     font-size: 0.65rem;
     padding: 4px 10px;
     border: 1px solid var(--border);
-    color: var(--text-dim);
+    color: var(--text-soft);
     letter-spacing: 0.05em;
 }
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="Weill Cornell Graduate School of Medical Sciences">
+  <rect x="0" y="0" width="64" height="64" fill="#B31B1B"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#ffffff">WC</text>
+  <text x="76" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#B31B1B" letter-spacing="0.5">Weill Cornell Medicine</text>
+  <text x="76" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#e8e8e8" letter-spacing="0.6">Graduate School of Medical Sciences</text>
+</svg>
