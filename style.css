@@ -646,6 +646,31 @@ html, body {
     display: block;
 }
 
+.affiliation-logos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.affiliation-logos .affiliation-logo {
+    height: 30px;
+}
+
+.affiliation-logo-light {
+    background: #ffffff;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+
+.project-more-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border: 1px solid var(--border);
+}
+
 .affiliation-text {
     font-family: var(--mono);
     font-size: 0.65rem;
