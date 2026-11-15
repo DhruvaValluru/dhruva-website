@@ -17,7 +17,6 @@
         <div class="nav-links">
             <a href="#" class="nav-link active" data-page="home">[ HOME ]</a>
             <a href="#" class="nav-link" data-page="projects">[ PROJECTS ]</a>
-            <a href="#" class="nav-link" data-page="mentoring">[ MENTORING ]</a>
             <a href="#" class="nav-link" data-page="toolkit">[ <span class="nav-ai">AI </span>TOOLKIT ]</a>
             <a href="#" class="nav-link" data-page="about">[ ABOUT ]</a>
         </div>
@@ -94,7 +93,7 @@
                                 <div class="project-more-content">
                                     <p><strong>Problem:</strong> Distracted driving kills thousands of people every year, and teen drivers are hit hardest. Most &ldquo;safe driving&rdquo; apps score you <em>after</em> the trip. They don&rsquo;t stop the glance in the moment.</p>
                                     <p><strong>The model:</strong> A <strong>liquid CfC (closed-form continuous-time) neural network</strong> paired with CNN vision features. Liquid networks model <strong>time</strong>, so the model reads a glance as a sequence, not one frame. It was trained on <strong>14,000+ labeled frames</strong> through an automated, multi-agent training pipeline, then quantized for on-device use.</p>
-                                    <p><strong>Two versions:</strong> The same model ships two ways. The <strong>hardware device</strong> runs a shrunk-down CfC in custom ESP32 firmware. The <strong>app</strong> runs the full-size model on the iPhone&rsquo;s Neural Engine. Both are detailed below.</p>
+                                    <p><strong>Two versions:</strong> The same model ships two ways. The <strong>hardware device</strong> is a custom ESP32-CAM PCB with a 12MP IR camera, an accelerometer, and speakers. It runs a shrunk-down CfC in firmware and turns on automatically with the car. The <strong>app</strong> runs the full-size model on the iPhone&rsquo;s Neural Engine (detailed below).</p>
                                     <p><strong>Recognition:</strong> Won <strong>1st place at Ready, Set, App!</strong> with the CUBO team. I presented CUBO at <strong>CES at 15</strong>, the youngest presenter in its history.</p>
                                 </div>
                             </details>
@@ -130,57 +129,13 @@
 
                     <div class="project-connector">
                         <div class="connector-line"></div>
-                        <span class="connector-label">// VERSION 1 · HARDWARE</span>
-                        <div class="connector-line"></div>
-                    </div>
-
-                    <div class="project-box reverse project-sub" id="cubo-hardware">
-                        <div class="project-img-wrapper cover-img hw-img">
-                            <img src="assets/cubo-hardware.svg" alt="CUBO hardware diagram: ESP32-CAM PCB, IR camera, accelerometer, amplifier and speakers" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_01a ]</span><span class="project-status">HARDWARE</span></div>
-                            <h3 class="project-title"><span class="tw">C U B O</span> &nbsp; <span class="tw">D E V I C E</span></h3>
-                            <p class="project-role">Custom PCB · ESP32-CAM firmware · on-device inference</p>
-                            <p class="project-body project-body-short">A <strong>custom ESP32-CAM PCB</strong> that powers on with the car and runs CUBO&rsquo;s distraction AI <strong>entirely on-device</strong>, using a <strong>12MP infrared camera</strong> and an <strong>accelerometer</strong>. When it spots a distraction, a <strong>MAX98357A amp</strong> drives two speakers to alert the driver instantly.</p>
-                            <details class="project-more">
-                                <summary class="project-more-toggle">
-                                    <span class="project-more-label">[ MORE INFO ]</span>
-                                    <span class="project-more-arrow">▼</span>
-                                </summary>
-                                <div class="project-more-content">
-                                    <p><strong>Electronics:</strong> Custom ESP32-CAM board with a 12MP IR camera (works at night), an accelerometer for motion context, and a MAX98357A I&sup2;S amplifier driving two speakers.</p>
-                                    <p><strong>Firmware:</strong> The CfC model is shrunk down and built into the PCB&rsquo;s firmware, running at a few FPS on the microcontroller. No phone or cloud is needed.</p>
-                                    <p><strong>Enclosure:</strong> Everything sits inside a heat-resistant polycarbonate shell built to survive a dashboard in summer.</p>
-                                    <p><strong>Tradeoffs:</strong> It turns on automatically with the car and <strong>can&rsquo;t be skipped</strong>. The cost is a higher build price and the need for its own update system.</p>
-                                </div>
-                            </details>
-                            <div class="project-tech">
-                                <code>ESP32</code>
-                                <code>PCB Design</code>
-                                <code>Embedded C/C++</code>
-                                <code>IR Camera</code>
-                                <code>TensorFlow Lite</code>
-                                <code>Raspberry Pi</code>
-                            </div>
-                            <div class="project-links">
-                            <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                                <span>cubocruise.com</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-connector">
-                        <div class="connector-line"></div>
-                        <span class="connector-label">// VERSION 2 · APP</span>
+                        <span class="connector-label">// CONNECTED APP</span>
                         <div class="connector-line"></div>
                     </div>
 
                     <div class="project-box project-sub" id="cubo-app">
                         <div class="project-img-wrapper cubo-app-img">
-                            <img src="assets/cubo-app.png" alt="CUBO app screenshot" loading="lazy">
+                            <img src="assets/cubo-app-screen.jpg" alt="CUBO app welcome screen: Stay with the road" loading="lazy">
                         </div>
                         <div class="project-info">
                             <div class="project-meta"><span class="project-label">[ MODULE_01b ]</span><span class="project-status">LIVE</span></div>
@@ -228,8 +183,8 @@
                     </div>
 
                     <div class="project-box reverse" id="flightsim">
-                        <div class="project-img-wrapper cover-img flightsim-img">
-                            <img src="assets/flightsim.svg" alt="FlightSim: prompt to spec to JSBSim to Unreal Engine 5" loading="lazy">
+                        <div class="project-img-wrapper flightsim-img">
+                            <img src="assets/flightsim-render.jpg" alt="FlightSim render: A-4 Skyhawk flying past a cliff face at golden hour" loading="lazy">
                         </div>
                         <div class="project-info">
                             <div class="project-meta"><span class="project-label">[ MODULE_02 ]</span><span class="project-status">ISL · V3</span></div>
@@ -249,13 +204,13 @@
                                     <p><strong>Live telemetry:</strong> Live plots of flight path over terrain, altitude, and lift / drag / g-loading, synced to the physics engine.</p>
                                     <p><strong>Engine:</strong> <strong>JSBSim</strong> flight dynamics bridged into <strong>Unreal Engine</strong> through a custom plugin + C++ bridge. Real terrain (Copernicus DEM), real weather (ERA5 / Open-Meteo), atmospheric modeling, autopilot and control systems, and a 3D asset pipeline (FBX/glTF aircraft import, materials).</p>
                                     <p><strong>Rigor:</strong> Built in validated phases where every gate passes, including cross-host trajectory parity to 1e-4 of tolerance and visual checks measured from rendered pixels. pytest + mutation testing, GitHub Actions CI on macOS, Linux, and Windows.</p>
-                                    <p><strong>Team:</strong> Mentored by <strong>Prof. Sambit Bhattacharya</strong>, project-managed by <strong>NASA Goddard engineer Michael Backus</strong>, and developed under a <strong>Department of War&ndash;funded ISL lab</strong>.</p>
+                                    <p><strong>Team:</strong> Mentored by a <strong>university professor</strong>, project-managed by a <strong>NASA Goddard engineer</strong>, and developed under a <strong>Department of War&ndash;funded ISL lab</strong>.</p>
                                 </div>
                             </details>
                             <div class="project-highlight"><span class="highlight-label">COOLEST PART</span><p>Reverse-engineering <strong>X-Plane</strong>, one of the best airplane-physics simulators in the world, with <strong>Ghidra</strong> to understand its physics components, terrain, and aircraft, and bring those ideas into my own engine.</p></div>
                             <div class="project-affiliation aff-isl">
                                 <img src="assets/flightsim-mark.svg" alt="ISL lab" class="affiliation-logo">
-                                <span class="affiliation-text">Mentor: Prof. Sambit Bhattacharya · PM: Michael Backus, NASA Goddard · Department of War&ndash;funded ISL lab</span>
+                                <span class="affiliation-text">Mentored by a professor · PM: NASA Goddard engineer · Department of War&ndash;funded ISL lab</span>
                             </div>
                             <div class="project-tech">
                                 <code>Python</code>
@@ -552,73 +507,6 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mentoring Page -->
-        <section class="page" id="mentoring">
-            <div class="projects-container">
-                <div class="page-header">
-                    <span class="header-prefix">/ </span>
-                    <h2 class="page-title">M E N T O R I N G</h2>
-                </div>
-                <p class="page-desc">I&rsquo;ve lived both sides: building my own products, and helping other students build theirs.</p>
-
-                <div class="stat-strip">
-                    <div class="stat"><span class="stat-num">10</span><span class="stat-label">startup teams in my accelerator</span></div>
-                    <div class="stat"><span class="stat-num">~40</span><span class="stat-label">student founders taught weekly</span></div>
-                    <div class="stat"><span class="stat-num">6</span><span class="stat-label">robotics teams built</span></div>
-                    <div class="stat"><span class="stat-num">4</span><span class="stat-label">mentors hired &amp; trained</span></div>
-                    <div class="stat"><span class="stat-num">$4K</span><span class="stat-label">won by a team I mentored</span></div>
-                    <div class="stat"><span class="stat-num">1st</span><span class="stat-label">Ready, Set, App! with CUBO</span></div>
-                </div>
-
-                <div class="essay-grid">
-                    <article class="essay essay-wide">
-                        <span class="project-label">[ WHAT_MAKES_ME_DIFFERENT ]</span>
-                        <h3 class="essay-title">I&rsquo;ve been the builder and the mentor</h3>
-                        <p>I&rsquo;ve built and pitched my own software and hardware products (CUBO, FlightSim, Alfred), and I&rsquo;ve spent countless hours mentoring high schoolers through the same journey, first in robotics and now in startups at <strong>Capture Success</strong>, where I help students turn ideas into products and pitches. That mix of building experience and a teaching mindset is what I bring to every team.</p>
-                    </article>
-
-                    <article class="essay">
-                        <span class="project-label">[ MY_BIGGEST_WEAKNESS ]</span>
-                        <h3 class="essay-title">The two-minute fix that taught nothing</h3>
-                        <p>I&rsquo;m a natural builder, and that&rsquo;s where my mind goes first. When I started mentoring robotics, a team hit a sensor bug. I grabbed the robot and fixed it in two minutes while they watched. A few weeks later the same bug came back at competition, and the team had no idea what to do. I had solved the problem but taught them nothing.</p>
-                        <p>After that, I changed how I mentor:</p>
-                        <ol class="essay-list">
-                            <li><strong>Hands off.</strong> I point, draw diagrams, and ask questions that steer the team toward the right way of thinking, so they learn to approach similar problems too, not just that one.</li>
-                            <li><strong>Backtrack first.</strong> Before I answer, I ask: <em>What did you expect to happen? What actually happened? What have you tried?</em> Most of the time they find the answer while explaining.</li>
-                            <li><strong>Teach it back.</strong> After a big fix, one student explains to the team what changed and why. If they can&rsquo;t, we run the process again together.</li>
-                        </ol>
-                    </article>
-
-                    <article class="essay">
-                        <span class="project-label">[ WHERE_I_LEARNED_IT ]</span>
-                        <h3 class="essay-title">Guiding, not giving answers</h3>
-                        <p>I first learned this teaching robotics to <strong>kids with special needs</strong>. Giving them the answer never worked. They only learned when they figured it out themselves, with me guiding. I use the same approach with my teams at Capture Success. I want students to leave knowing how to solve the problem, not just holding a finished project.</p>
-                        <p>Last year my team and I won <strong>1st place at Ready, Set, App!</strong> with CUBO, and we wouldn&rsquo;t have gotten there without <strong>Noga, our mentor</strong>. She knew when to step in and when to let us figure things out. She set up one of the most efficient team systems I&rsquo;ve ever seen but rarely solved problems herself. She kept the focus on solving as a team, and I carry that into how I mentor.</p>
-                    </article>
-
-                    <article class="essay">
-                        <span class="project-label">[ WHEN_STUDENTS_BUILD_WITH_AI ]</span>
-                        <h3 class="essay-title">Treat the AI-built app like a textbook</h3>
-                        <p>Real understanding of code isn&rsquo;t memorizing syntax. It&rsquo;s knowing the parts of a program, how they connect and communicate, and how they work. So I have students walk <em>backwards</em> through their AI-built app:</p>
-                        <ul class="essay-list">
-                            <li><strong>Predict, then run.</strong> Before running each part of their code, they predict what it does, then check.</li>
-                            <li><strong>Record a walkthrough.</strong> A short screen-share explaining each main file in their own words. Any part they can&rsquo;t explain shows exactly what to learn next.</li>
-                            <li><strong>One feature at a time.</strong> No more &ldquo;do it all&rdquo; prompts. They can&rsquo;t accept a change until they can explain it.</li>
-                        </ul>
-                        <p>At Capture Success, judges caught that one of my teams didn&rsquo;t understand the software behind their hardware. So I built a layer into their coding agent that scans their whole GitHub, walks them through an <strong>interactive simulation of how each part of their software works</strong>, and quizzes them with short-answer questions to check understanding.</p>
-                    </article>
-
-                    <article class="essay">
-                        <span class="project-label">[ WHEN_A_TEAM_GOES_QUIET ]</span>
-                        <h3 class="essay-title">Silence usually means embarrassment</h3>
-                        <p>I assume silence comes from embarrassment, not laziness. Teams that fall behind often go quiet because they don&rsquo;t want to admit it. So instead of another &ldquo;just checking in,&rdquo; I send a friendly, no-pressure reset that makes replying easy:</p>
-                        <blockquote class="essay-quote">&ldquo;Reply yes for a quick 10-minute call this week. Or I can send a new plan, or just let me know if you&rsquo;re busy and need more time.&rdquo;</blockquote>
-                        <p>If that doesn&rsquo;t work, I reach out to each student one-on-one, because in a group chat everyone assumes someone else will answer. Once we reconnect, I break the project into one small task each person can finish in a couple of days.</p>
-                    </article>
                 </div>
             </div>
         </section>
