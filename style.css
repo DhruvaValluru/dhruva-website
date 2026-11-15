@@ -1043,105 +1043,6 @@ html, body {
 .hw-img { background: #07110c; }
 .robotics-img { background: #100c06; }
 
-/* ---------- Mentoring page ---------- */
-.stat-strip {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    border: 1px solid var(--border);
-    margin-bottom: 32px;
-}
-
-.stat {
-    padding: 20px 16px;
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.stat:last-child { border-right: none; }
-
-.stat-num {
-    font-family: var(--sans);
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--text), var(--accent-blue));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stat-label {
-    font-family: var(--mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.06em;
-    color: var(--text-dim);
-    line-height: 1.5;
-}
-
-.essay-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-}
-
-.essay {
-    border: 1px solid var(--border);
-    padding: 28px;
-    transition: border-color 0.3s ease;
-}
-
-.essay:hover { border-color: var(--border-hover); }
-
-.essay-wide {
-    grid-column: 1 / -1;
-    border-color: rgba(96, 165, 250, 0.2);
-}
-
-.essay-title {
-    font-family: var(--sans);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 6px 0 14px;
-}
-
-.essay p {
-    font-size: 0.88rem;
-    line-height: 1.75;
-    color: var(--text-soft);
-    margin-bottom: 12px;
-}
-
-.essay strong { color: var(--text); font-weight: 600; }
-
-.essay-list {
-    padding-left: 20px;
-    margin-bottom: 12px;
-}
-
-.essay-list li {
-    font-size: 0.86rem;
-    line-height: 1.7;
-    color: var(--text-soft);
-    margin-bottom: 8px;
-}
-
-.essay-list li::marker {
-    color: var(--accent-blue);
-    font-family: var(--mono);
-}
-
-.essay-quote {
-    border-left: 3px solid var(--accent-blue);
-    padding: 10px 16px;
-    margin: 4px 0 14px;
-    background: var(--surface);
-    font-size: 0.86rem;
-    line-height: 1.6;
-    color: var(--text);
-    font-style: italic;
-}
-
 /* ---------- AI Toolkit page ---------- */
 .cycle {
     display: grid;
@@ -1303,9 +1204,6 @@ a.tool-fav:hover { border-color: #fbbf24; }
 .highlight-list li::marker { color: var(--accent-blue); }
 
 @media (max-width: 1024px) {
-    .stat-strip { grid-template-columns: repeat(3, 1fr); }
-    .stat:nth-child(3) { border-right: none; }
-    .stat:nth-child(-n+3) { border-bottom: 1px solid var(--border); }
     .cycle { grid-template-columns: 1fr; }
     .cycle-step { border-right: none; border-bottom: 1px solid var(--border); }
     .cycle-step:last-child { border-bottom: none; }
@@ -1419,15 +1317,7 @@ a.tool-fav:hover { border-color: #fbbf24; }
         display: none;
     }
 
-    .stat-strip { grid-template-columns: repeat(2, 1fr); }
-    .stat { border-right: none; border-bottom: 1px solid var(--border); }
-    .stat:nth-child(odd) { border-right: 1px solid var(--border); }
-    .stat:nth-last-child(-n+2) { border-bottom: none; }
-
-    .essay-grid,
     .tool-grid { grid-template-columns: 1fr; }
-
-    .essay { padding: 22px; }
 
     .cover-img {
         height: auto;
