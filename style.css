@@ -438,7 +438,8 @@ html, body {
 
 .project-img-wrapper {
     width: 100%;
-    height: 280px;
+    height: 100%;
+    min-height: 280px;
     overflow: hidden;
     background: var(--surface);
     display: flex;
@@ -835,6 +836,153 @@ html, body {
 }
 
 /* Responsive */
+/* Project meta row: label + status tag */
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.project-meta .project-label {
+    margin-bottom: 0;
+}
+
+.project-status {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    padding: 2px 8px;
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    color: var(--accent-green);
+}
+
+.project-role {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--accent-blue);
+    margin: -4px 0 14px;
+}
+
+.page-desc-hint {
+    color: var(--accent-blue);
+}
+
+/* Logo panels */
+.logo-img img {
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    max-width: 55%;
+    max-height: 200px;
+}
+
+.alfred-img {
+    background: radial-gradient(circle at 50% 45%, #0f2a52 0%, #071225 60%, #050a14 100%);
+}
+
+.alfred-img img {
+    filter: drop-shadow(0 12px 32px rgba(46, 158, 255, 0.35));
+}
+
+.capture-img {
+    background: #6bb6ff;
+}
+
+.capture-img img {
+    max-width: 60%;
+    max-height: 240px;
+}
+
+/* Generated cover art: show the whole graphic, never crop */
+.cover-img {
+    align-items: flex-start;
+}
+
+.cover-img img {
+    object-fit: contain;
+    height: auto;
+    position: sticky;
+    top: 80px;
+}
+
+.flightsim-img {
+    background: #04070d;
+}
+
+.equalvoice-img {
+    background: #0b0d12;
+}
+
+/* Keep each word of spaced-out titles together */
+.project-title .tw {
+    white-space: nowrap;
+}
+
+/* Other builds */
+.other-builds {
+    border: 1px solid var(--border);
+    padding: 32px;
+}
+
+.other-header {
+    margin-bottom: 20px;
+}
+
+.other-title {
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.other-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.other-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s ease;
+}
+
+.other-card:hover {
+    border-color: var(--accent-blue);
+}
+
+.other-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.other-arrow {
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+}
+
+.other-desc {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+.other-tech {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 0 20px;
@@ -897,7 +1045,29 @@ html, body {
     }
 
     .project-img-wrapper {
-        height: 180px;
+        height: 220px;
+        min-height: 0;
+    }
+
+    .other-builds {
+        padding: 24px;
+    }
+
+    .other-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.2em;
+    }
+
+    .cover-img {
+        height: auto;
+    }
+
+    .cover-img img {
+        position: static;
     }
 
     .cubo-app-img {

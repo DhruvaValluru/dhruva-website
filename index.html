@@ -70,28 +70,89 @@
                     <span class="header-prefix">/ </span>
                     <h2 class="page-title">P R O J E C T S</h2>
                 </div>
-                <p class="page-desc">Selected projects and experiments.</p>
+                <p class="page-desc">Startups, research, and things I&rsquo;ve built, newest first. Open <span class="page-desc-hint">[ MORE INFO ]</span> on any project for the full story.</p>
 
                 <div class="projects-grid">
-                    <div class="project-box">
-                        <div class="project-img-wrapper cubo-img">
-                            <img src="assets/cubo.png" alt="CUBO">
+                    <div class="project-box" id="flightsim">
+                        <div class="project-img-wrapper cover-img flightsim-img">
+                            <img src="assets/flightsim.svg" alt="FlightSim: prompt to spec to JSBSim to Unreal Engine 5" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <span class="project-label">[ MODULE_01 ]</span>
-                            <h3 class="project-title">C U B O</h3>
-                            <p class="project-body">A teen-led AI-based smart assistant built to keep you focused. Compact dashboard device using edge AI to monitor driver attention and instantly alert if distraction is detected.</p>
+                            <div class="project-meta"><span class="project-label">[ MODULE_01 ]</span><span class="project-status">NEW · PUBLIC</span></div>
+                            <h3 class="project-title"><span class="tw">F L I G H T S I M</span></h3>
+                            <p class="project-role">Solo build · Python · JSBSim · Unreal Engine 5</p>
+                            <p class="project-body project-body-short">A <strong>research-grade flight simulator</strong> you drive with <strong>plain English</strong>. Type a scenario, get a <strong>validated, reproducible spec</strong>, then <strong>JSBSim physics</strong> and <strong>Unreal Engine 5</strong> renders. Every claim is checked by <strong>measured gates</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Problem:</strong> Most sims give you either pretty pictures or trustworthy physics, rarely both, and setting up a scenario means hand-editing config files. Results are hard to reproduce and harder to defend.</p>
+                                    <p><strong>How it works:</strong> A prompt like <em>&ldquo;fly the c172p through a tornado over the prairie&rdquo;</em> is compiled into a <strong>versioned scenario spec</strong>. Every field shows its provenance before anything runs, and impossible requests are <strong>refused by name</strong> instead of silently faked.</p>
+                                    <p><strong>Physics:</strong> Headless <strong>JSBSim</strong> flight dynamics with full telemetry. Real terrain from the <strong>Copernicus DEM</strong> and historical weather from <strong>Open-Meteo</strong>. Winds, turbulence, storms, surfaces, and dates are all spec fields.</p>
+                                    <p><strong>Rendering:</strong> <strong>Unreal Engine 5</strong> host running the same JSBSim model through a patched plugin. Real aircraft meshes are fetched at pinned commits with licenses checked, and placeholder airframes never render.</p>
+                                    <p><strong>Validation:</strong> Built in <strong>gated phases (0&ndash;7), every gate passing</strong>: trim hold, spec checks, control, null tests, terrain, sweeps. Gate 5 shows <strong>trajectory parity across both hosts to 1e-4 of tolerance</strong>. Gate 6 measures the visuals (haze, valley shadows, ground shadow, exposure) straight from the rendered pixels.</p>
+                                    <p><strong>AI compiler:</strong> Works with zero setup through a rate-limited relay, with tiers for a <strong>free local model (Ollama)</strong>, Groq, OpenRouter, or Anthropic. A <strong>deterministic parser</strong> covers the full vocabulary as an offline fallback.</p>
+                                    <p><strong>Ships on:</strong> macOS, Linux, and Windows, with CI on all three. Web app on localhost, plus a one-command Windows deploy.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>Python</code>
+                                <code>JSBSim</code>
+                                <code>Unreal Engine 5</code>
+                                <code>C++</code>
+                                <code>LLMs</code>
+                                <code>FastAPI</code>
+                                <code>GIS</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://github.com/DhruvaValluru/FlightSim-PublicVERSION" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>FlightSim (Public)</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse" id="cubo">
+                        <div class="project-img-wrapper cubo-img">
+                            <img src="assets/cubo.png" alt="CUBO dashboard device" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_02 ]</span><span class="project-status">FOUNDER</span></div>
+                            <h3 class="project-title"><span class="tw">C U B O</span></h3>
+                            <p class="project-role">Founder · Hardware, AI &amp; product</p>
+                            <p class="project-body project-body-short">A teen-led <strong>driver-safety startup</strong>. A compact dash device uses <strong>edge AI</strong> to watch driver attention and <strong>alerts instantly</strong> when it spots distraction. Presented at <strong>CES at 15</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Problem:</strong> Distracted driving kills thousands of people every year, and teen drivers are hit hardest. Phone-based &ldquo;safe driving&rdquo; apps mostly score you <em>after</em> the trip. They don&rsquo;t stop the glance in the moment.</p>
+                                    <p><strong>Device:</strong> A small camera module on the dashboard runs <strong>computer vision on-device</strong>. Nothing has to be streamed to the cloud to raise an alert, so it stays fast and private.</p>
+                                    <p><strong>Detection:</strong> The prototype detector combines <strong>MediaPipe Face Mesh head-pose</strong> (yaw/pitch/roll) with <strong>YOLOv8 phone detection</strong>. The key idea: holding a phone isn&rsquo;t distraction, <em>looking at it</em> is. Frame-buffer smoothing cuts false alarms.</p>
+                                    <p><strong>Status:</strong> Working prototype, companion app live on the web, and a public demo at <strong>CES</strong>. I was the youngest presenter in its history.</p>
+                                </div>
+                            </details>
                             <div class="project-tech">
                                 <code>Edge AI</code>
                                 <code>Hardware</code>
                                 <code>Computer Vision</code>
+                                <code>MediaPipe</code>
+                                <code>YOLOv8</code>
                                 <code>Startup</code>
                             </div>
                             <div class="project-links">
-                                <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" title="Website">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                                    <span>cubocruise.com</span>
-                                </a>
+                            <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>cubocruise.com</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/CUBO-MEDIAPIPE-YOLO-DEMO" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Detector Demo</span>
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -102,41 +163,68 @@
                         <div class="connector-line"></div>
                     </div>
 
-                    <div class="project-box reverse project-sub">
+                    <div class="project-box project-sub" id="cubo-app">
                         <div class="project-img-wrapper cubo-app-img">
-                            <img src="assets/cubo-app.png" alt="CUBO Synced App">
+                            <img src="assets/cubo-app.png" alt="CUBO app screenshot" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <span class="project-label">[ MODULE_01b ]</span>
-                            <h3 class="project-title">C U B O &nbsp; S Y N C E D &nbsp; A P P</h3>
-                            <p class="project-body">An AI-powered driving safety app that connects to the CUBO dash device to monitor distracted driving, track driver behavior, and give parents or users clear reports to improve safety.</p>
+                            <div class="project-meta"><span class="project-label">[ MODULE_02b ]</span><span class="project-status">LIVE</span></div>
+                            <h3 class="project-title"><span class="tw">C U B O</span> &nbsp; <span class="tw">A P P</span></h3>
+                            <p class="project-role">Co-built with the CUBO team · Expo / React Native Web</p>
+                            <p class="project-body project-body-short">The <strong>CUBO companion app</strong>, now a <strong>full web app</strong> anyone can open: <strong>turn-by-turn maps</strong>, <strong>on-device attention monitoring</strong>, trip insights, family sharing, and a built-in <strong>voice assistant</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Maps &amp; driving:</strong> Full-screen <strong>MapLibre GL</strong> maps (OpenFreeMap), address search with Photon, routing with OSRM. Route previews, maneuver instructions, speed, hazard reporting, and voice route requests.</p>
+                                    <p><strong>Attention monitoring:</strong> <strong>MediaPipe Face Landmarker</strong> runs locally on camera frames to estimate head movement and eye closure. A guided parked calibration learns your baseline. Alerts only fire above 3&nbsp;mph with fresh GPS, and missing data is reported, never counted as &ldquo;attentive.&rdquo;</p>
+                                    <p><strong>Insights:</strong> Focus scores built from measured attentive driving time, trip summaries with route maps and attention markers, distraction trends, and goals.</p>
+                                    <p><strong>Cubo Assistant:</strong> Account-aware answers, a spoken Voice Assist mode, and an optional general-AI mode running a <strong>Llama model in the browser via WebLLM/WebGPU</strong>, with no paid API needed.</p>
+                                    <p><strong>Accounts &amp; privacy:</strong> Firebase Auth + Firestore with owner-only sync rules. Camera frames are analyzed locally and never uploaded, and raw audio is never stored.</p>
+                                    <p><strong>Earlier version:</strong> The original synced app (React Native + Expo) paired with the dash device for distraction scores, time tracking, and app focus-blocking. Demo on YouTube.</p>
+                                </div>
+                            </details>
                             <div class="project-tech">
                                 <code>React Native</code>
                                 <code>TypeScript</code>
                                 <code>Expo</code>
-                                <code>Mobile App</code>
+                                <code>Firebase</code>
+                                <code>MapLibre</code>
+                                <code>MediaPipe</code>
+                                <code>WebLLM</code>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/DhruvaValluru/CUBO-APP-SYNCE4DDEVICE" class="project-link-icon project-link-github" target="_blank" title="GitHub">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://www.youtube.com/watch?v=7hDUQYFQ1TE" class="project-link-icon project-link-youtube" target="_blank" title="Demo Video">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                                    <span>Demo</span>
-                                </a>
+                            <a href="https://cubo-app-cac.pages.dev/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>Open the App</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/Full-CUBO-APP" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Full App</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/CUBO-APP-SYNCE4DDEVICE" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Synced App v1</span>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=7hDUQYFQ1TE" class="project-link-icon project-link-youtube" target="_blank" rel="noopener" title="Demo Video">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <span>Demo</span>
+                            </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-box reverse">
+                    <div class="project-box reverse" id="brainwaves">
                         <div class="project-img-wrapper">
-                            <img src="assets/brainwaves.jpg" alt="Brainwaves">
+                            <img src="assets/brainwaves.jpg" alt="Brainwaves EEG research" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <span class="project-label">[ MODULE_02 ]</span>
-                            <h3 class="project-title">B R A I N W A V E S</h3>
-                            <p class="project-body project-body-short"><strong>3 novel interregional EEG signatures</strong> for <strong>early neurological decline</strong>. <strong>Connectivity-based deep learning</strong> that forecasts <strong>brain-state transitions</strong>. Research with <strong>Weill Cornell</strong>.</p>
+                            <div class="project-meta"><span class="project-label">[ MODULE_03 ]</span><span class="project-status">RESEARCH</span></div>
+                            <h3 class="project-title"><span class="tw">B R A I N W A V E S</span></h3>
+                            <p class="project-role">Researcher · co-built with Weill Cornell faculty</p>
+                            <p class="project-body project-body-short"><strong>3 novel interregional EEG signatures</strong> for <strong>early neurological decline</strong>. <strong>Connectivity-based machine learning</strong> that forecasts <strong>brain-state transitions</strong>, tested across <strong>6 clinical EEG datasets</strong>.</p>
                             <details class="project-more">
                                 <summary class="project-more-toggle">
                                     <span class="project-more-label">[ MORE INFO ]</span>
@@ -145,10 +233,10 @@
                                 <div class="project-more-content">
                                     <p><strong>Problem:</strong> Seizures strike in seconds. Clinicians see them on EEG only after onset. Region-by-region EEG prediction has plateaued.</p>
                                     <p><strong>Approach:</strong> Model the <strong>cross-regional connectivity</strong>, not the regions. Three novel <strong>interregional communication signatures</strong> emerged, each a potential early biomarker of neurological decline.</p>
-                                    <p><strong>Build:</strong> <strong>BFI-Pipeline</strong>: raw EEG in, connectivity features out, <strong>deep learning</strong> forecasting brain-state transitions.</p>
-                                    <p><strong>Data:</strong> Multi-site clinical EEG: CHB-MIT, TUH EEG Corpus, PhysioNet. Epilepsy, ICU, stroke, and delirium cohorts.</p>
+                                    <p><strong>Build:</strong> <strong>BFI-Pipeline</strong> (Brain Fragility Index): raw EEG in, preprocessing and connectivity + band-power features out, then <strong>XGBoost</strong> and <strong>BiLSTM</strong> models forecasting brain-state transitions.</p>
+                                    <p><strong>Results:</strong> Pre-seizure detection on <strong>CHB-MIT</strong>: <strong>0.85 mean AUROC</strong> per patient after fine-tuning (24 patients, up from 0.77). On <strong>I-CARE</strong> ICU EEG: <strong>0.996 AUROC</strong> for segment-level coma outcome and <strong>0.999</strong> for burst-suppression detection. <strong>Sleep-EDF</strong> wake vs. sleep: <strong>0.92 AUROC</strong>.</p>
+                                    <p><strong>Data:</strong> Multi-site clinical EEG: CHB-MIT, Siena, I-CARE, Sleep-EDF, TUH EEG Corpus, and PhysioNet. Epilepsy, ICU/coma, sleep, stroke, and delirium cohorts.</p>
                                     <p><strong>Team:</strong> Mentored by and co-built with professors at Weill Cornell Graduate School of Medical Sciences.</p>
-                                    <p><strong>Code:</strong> Full pipeline open-sourced. Check it out on <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-more-link" target="_blank">GitHub ↗</a>.</p>
                                 </div>
                             </details>
                             <div class="project-affiliation">
@@ -157,43 +245,210 @@
                             </div>
                             <div class="project-tech">
                                 <code>EEG</code>
-                                <code>Deep Learning</code>
+                                <code>XGBoost</code>
+                                <code>BiLSTM</code>
+                                <code>Signal Processing</code>
                                 <code>Neurotech</code>
                                 <code>Research</code>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-link-icon project-link-github" target="_blank" title="GitHub">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                    <span>BFI-Pipeline</span>
-                                </a>
+                            <a href="https://github.com/DhruvaValluru/Dhruva-BFI-Pipline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>My Pipeline</span>
+                            </a>
+                            <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Team BFI-Pipeline</span>
+                            </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-box">
-                        <div class="project-img-wrapper">
-                            <img src="assets/closet-combos.jpg" alt="Closet Combos">
+                    <div class="project-box" id="alfred">
+                        <div class="project-img-wrapper logo-img alfred-img">
+                            <img src="assets/alfred-logo.png" alt="Alfred AI logo" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <span class="project-label">[ MODULE_03 ]</span>
-                            <h3 class="project-title">C L O S E T &nbsp; C O M B O S</h3>
-                            <p class="project-body">An AI wardrobe app where users upload their clothes to get outfit combinations from what they already own. It also recommends new clothing that perfectly matches their current wardrobe, helping users buy smarter.</p>
+                            <div class="project-meta"><span class="project-label">[ MODULE_04 ]</span><span class="project-status">NEW</span></div>
+                            <h3 class="project-title"><span class="tw">A L F R E D</span> &nbsp; <span class="tw">A I</span></h3>
+                            <p class="project-role">Co-builder · Python · Claude API · Windows</p>
+                            <p class="project-body project-body-short"><em>&ldquo;Every device, one butler.&rdquo;</em> A <strong>voice assistant</strong> that actually <strong>works inside your apps</strong>: it opens programs, clicks, types, and edits documents across your devices, with a <strong>real Windows installer</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Problem:</strong> Voice assistants can set timers but can&rsquo;t <em>do</em> anything inside the apps you use. Screenshot-and-click agents are slow and fragile.</p>
+                                    <p><strong>How it works:</strong> Alfred drives apps through <strong>Windows UI Automation</strong> (the same API screen readers use) and <strong>COM</strong> for Office. It doesn&rsquo;t need to move your mouse, and it can work in several apps at once in the background.</p>
+                                    <p><strong>Fallback:</strong> For apps those APIs can&rsquo;t reach (games, canvases, custom UIs), it falls back to <strong>computer use</strong>: Claude reads screenshots and drives the real mouse and keyboard.</p>
+                                    <p><strong>Speed:</strong> An intent router sends common commands down a <strong>~50&nbsp;ms no-LLM fast path</strong>, and only complex tasks go to the Claude orchestrator. The goal is spoken replies in <strong>under ~800&nbsp;ms</strong>.</p>
+                                    <p><strong>Architecture:</strong> A hub &ldquo;brain&rdquo; (voice gateway, device registry, memory, policy, audit log) connected to every device over an <strong>encrypted mesh</strong>. Windows first, then Macs, iPhones, and iPads.</p>
+                                    <p><strong>Ships as:</strong> A desktop app with tray icon, a big STOP button, approvals, and an activity log, plus a no-admin Windows installer built by CI.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>Python</code>
+                                <code>Claude API</code>
+                                <code>Computer Use</code>
+                                <code>UI Automation</code>
+                                <code>Voice AI</code>
+                                <code>Windows</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://github.com/iampythoncoder/Alfred-AI" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Code</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/Jarvis-Hacks/releases/latest" class="project-link-icon" target="_blank" rel="noopener" title="Download">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+                                <span>Windows Installer</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse" id="equalvoice">
+                        <div class="project-img-wrapper cover-img equalvoice-img">
+                            <img src="assets/equalvoice.svg" alt="EqualVoice: accented vs native speech waveforms" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_05 ]</span><span class="project-status">HACKATHON</span></div>
+                            <h3 class="project-title"><span class="tw">E Q U A L V O I C E</span></h3>
+                            <p class="project-role">SCAI Duke 2026 Hackathon · team of 4</p>
+                            <p class="project-body project-body-short">A <strong>benchmark for voice-AI bias</strong>. It measures how <strong>speech recognition fails accented speakers</strong> and how those errors <strong>cascade into misrouted support calls</strong>, lost time, and real dollars.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Inspiration:</strong> We come from immigrant families. Our parents regularly get stuck in automated phone systems that can&rsquo;t understand accented speech. Those systems claim high accuracy but systematically fail people like them.</p>
+                                    <p><strong>What it measures:</strong> <strong>Character/word error rate</strong> by accent group, <strong>intent-classification errors</strong> (misrouted calls), a <strong>Disparity Index</strong> between ESL and native speakers, and the <strong>downstream cost</strong> in time and money.</p>
+                                    <p><strong>Pipeline:</strong> Audio &rarr; <strong>OpenAI Whisper</strong> &rarr; intent classifier &rarr; routing logic &rarr; metrics. Built on <strong>Mozilla Common Voice</strong>, with paths for CallHome and GLOBE.</p>
+                                    <p><strong>Challenge:</strong> Massive audio data under tight compute limits: corrupted files, inconsistent labels, and benchmarks that had to be carefully controlled so they wouldn&rsquo;t exaggerate or hide bias.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>Python</code>
+                                <code>Whisper</code>
+                                <code>ASR</code>
+                                <code>NLP</code>
+                                <code>AI Fairness</code>
+                                <code>Hugging Face</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://github.com/ZelinZhu-Richard/SCAI-duke-2026" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Code</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box" id="capture-success">
+                        <div class="project-img-wrapper logo-img capture-img">
+                            <img src="assets/capture-success.png" alt="Capture Success logo" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_06 ]</span><span class="project-status">CO-FOUNDER</span></div>
+                            <h3 class="project-title"><span class="tw">C A P T U R E</span> &nbsp; <span class="tw">S U C C E S S</span></h3>
+                            <p class="project-role">Co-founder · Student startup network, NC Triangle</p>
+                            <p class="project-body project-body-short">A <strong>student startup network</strong> in the Triangle. We run a <strong>free six-week accelerator</strong> at <strong>Frontier RTP</strong> that helps high schoolers turn ideas into real companies.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Why:</strong> Students build impressive things, but almost nothing is set up to help a teenager turn a project into a company: no cohort, no mentors, no demo day.</p>
+                                    <p><strong>What we run:</strong> A free six-week accelerator with a cohort, partner network, mentorship, and company profiles. The <strong>Fall 2026 cohort</strong> is underway.</p>
+                                    <p><strong>My role:</strong> Co-founded the network and helped build the accelerator program.</p>
+                                    <p><strong>Site:</strong> Built with Next.js 16, React 19, and Tailwind v4. All content lives in one source-of-truth file.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>Community</code>
+                                <code>Accelerator</code>
+                                <code>Startups</code>
+                                <code>Next.js</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://capture-success.vercel.app" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>capturesuccess.org</span>
+                            </a>
+                            <a href="https://github.com/iampythoncoder/capture-success-website" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Site Code</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse" id="closet-combos">
+                        <div class="project-img-wrapper">
+                            <img src="assets/closet-combos.jpg" alt="Closet Combos" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_07 ]</span></div>
+                            <h3 class="project-title"><span class="tw">C L O S E T</span> &nbsp; <span class="tw">C O M B O S</span></h3>
+                            <p class="project-role">Founder · AI fashion app</p>
+                            <p class="project-body project-body-short">An <strong>AI wardrobe app</strong>: upload your clothes and get <strong>outfit combinations from what you already own</strong>, plus recommendations for new pieces that <strong>actually match your closet</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Problem:</strong> Most people wear a small slice of their closet and buy clothes that don&rsquo;t go with anything they own.</p>
+                                    <p><strong>How it works:</strong> Photograph your clothes, and the app catalogs each item, then uses AI to generate outfit combinations from your real wardrobe.</p>
+                                    <p><strong>Shopping:</strong> Recommends new items that fill gaps and pair with what you have, so you buy smarter instead of buying more.</p>
+                                    <p><strong>Growth:</strong> Built an audience on TikTok at <strong>@closet_combos</strong>.</p>
+                                </div>
+                            </details>
                             <div class="project-tech">
                                 <code>AI</code>
+                                <code>JavaScript</code>
                                 <code>Fashion</code>
-                                <code>App</code>
                                 <code>E-commerce</code>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/DhruvaValluru/ClosetCombos" class="project-link-icon project-link-github" target="_blank" title="GitHub">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://www.tiktok.com/@closet_combos" class="project-link-icon project-link-tiktok" target="_blank" title="TikTok">
-                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.4a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.83z"/></svg>
-                                    <span>@closet_combos</span>
-                                </a>
+                            <a href="https://github.com/DhruvaValluru/ClosetCombos" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Code</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@closet_combos" class="project-link-icon project-link-tiktok" target="_blank" rel="noopener" title="TikTok">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.88 2.89 2.89 0 01-2.88-2.88 2.89 2.89 0 012.88-2.88c.28 0 .56.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.34 6.34 0 003.15 15.7a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.4a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.83z"/></svg>
+                                <span>@closet_combos</span>
+                            </a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="other-builds">
+                        <div class="other-header"><span class="project-label">[ MORE_BUILDS ]</span><h3 class="other-title">Other things I&rsquo;ve built</h3></div>
+                        <div class="other-grid">
+                            <a href="https://github.com/ZelinZhu-Richard/c0mpiled-11" class="other-card" target="_blank" rel="noopener">
+                                <span class="other-name">ProcureOS <span class="other-arrow">↗</span></span>
+                                <span class="other-desc">AI procurement agent: a plain-English request goes through sourcing, supplier verification, freight and landed cost, and approval policy, then stops at an approved order. It never pays on its own.</span>
+                                <span class="other-tech">TypeScript · Fastify · Next.js</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/Mark_4_Print" class="other-card" target="_blank" rel="noopener">
+                                <span class="other-name">Mark 4 Print <span class="other-arrow">↗</span></span>
+                                <span class="other-desc">3D-printable frame, board mount, hardware, and wire clips for my Mark 4 hardware build.</span>
+                                <span class="other-tech">CAD · 3D Printing</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/workingRaspObj" class="other-card" target="_blank" rel="noopener">
+                                <span class="other-name">Raspberry Pi Object Detection <span class="other-arrow">↗</span></span>
+                                <span class="other-desc">Real-time object detection on a Raspberry Pi. These early edge-vision experiments led to CUBO.</span>
+                                <span class="other-tech">Python · OpenCV · Raspberry Pi</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/instabot" class="other-card" target="_blank" rel="noopener">
+                                <span class="other-name">Instabot <span class="other-arrow">↗</span></span>
+                                <span class="other-desc">Instagram automation that reads the screen with OCR and replies with AI-generated chat.</span>
+                                <span class="other-tech">Python · OCR · Automation</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -231,7 +486,7 @@
 
                     <div class="about-bio">
                         <p>AKA the youngest in CES history to present at the ripe age of 15 — I'm currently in North Carolina finishing high school while building <strong>CUBO</strong>, a driver-safety hardware startup using edge AI to reduce distracted driving.</p>
-                        <p>In the past, I've spent time building EEG-based neurological prediction systems, low-cost hardware prototypes, robotics projects, and convincing more students to build cool things.</p>
+                        <p>In the past, I've spent time building EEG-based neurological prediction systems with Weill Cornell, a natural-language-driven flight simulator on JSBSim and Unreal Engine 5, low-cost hardware prototypes, and robotics projects. I also co-founded <strong>Capture Success</strong> to convince more students to build cool things.</p>
                         <p>I've recently become increasingly interested in doing cool AI stuff — especially where AI meets hardware, safety, research, and real-world products people can actually use.</p>
                         <p class="contact-line">Feel free to reach out about AI, startups, hardware, robotics, research, or anything interesting at <a href="mailto:dhruva.valluru@gmail.com">dhruva.valluru@gmail.com</a></p>
                     </div>

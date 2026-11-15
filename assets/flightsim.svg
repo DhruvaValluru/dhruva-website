@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04070d"/>
+      <stop offset="0.55" stop-color="#0b1a2c"/>
+      <stop offset="1" stop-color="#14304a"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2b3a"/>
+      <stop offset="1" stop-color="#070b10"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="600" height="400"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="600" height="400" fill="url(#sky)"/>
+    <!-- banked horizon + terrain -->
+    <g transform="rotate(-8 300 230)">
+      <path d="M-80 250 L20 205 L70 228 L140 160 L200 214 L250 190 L320 236 L380 150 L440 210 L500 182 L560 222 L700 196 L700 520 L-80 520 Z" fill="url(#ridge)"/>
+      <path d="M-80 270 L700 270" stroke="#22d3ee" stroke-opacity="0.45" stroke-width="1"/>
+      <g stroke="#22d3ee" stroke-opacity="0.12" fill="none">
+        <path d="M-80 300 L700 300"/><path d="M-80 335 L700 335"/><path d="M-80 380 L700 380"/>
+        <path d="M300 270 L-120 520"/><path d="M300 270 L80 520"/><path d="M300 270 L300 520"/><path d="M300 270 L520 520"/><path d="M300 270 L720 520"/>
+      </g>
+      <!-- pitch ladder -->
+      <g stroke="#34d399" stroke-width="1.5" fill="none" font-family="monospace" font-size="10">
+        <path d="M240 210 h40 M320 210 h40"/><path d="M240 150 h40 M320 150 h40"/>
+        <path d="M240 90 h40 M320 90 h40"/>
+        <path d="M240 330 h12 M262 330 h12 M326 330 h12 M348 330 h12" stroke-dasharray="0"/>
+      </g>
+      <g fill="#34d399" font-family="monospace" font-size="10">
+        <text x="222" y="214">5</text><text x="366" y="214">5</text>
+        <text x="216" y="154">10</text><text x="366" y="154">10</text>
+        <text x="216" y="94">15</text><text x="366" y="94">15</text>
+      </g>
+    </g>
+    <!-- flight path vector -->
+    <g stroke="#34d399" stroke-width="2" fill="none">
+      <circle cx="300" cy="230" r="9"/>
+      <path d="M279 230 h12 M309 230 h12 M300 221 v-9"/>
+    </g>
+    <!-- tapes -->
+    <g font-family="monospace" font-size="11" fill="#9fb3c8">
+      <rect x="40" y="200" width="62" height="24" fill="#0a0a0a" stroke="#34d399"/>
+      <text x="50" y="216" fill="#34d399">112 KT</text>
+      <rect x="498" y="200" width="66" height="24" fill="#0a0a0a" stroke="#34d399"/>
+      <text x="505" y="216" fill="#34d399">8 450 FT</text>
+      <g stroke="#34d399" stroke-opacity="0.5">
+        <path d="M102 120 v200 M498 120 v200"/>
+        <path d="M102 140 h-8 M102 170 h-8 M102 260 h-8 M102 290 h-8"/>
+        <path d="M498 140 h8 M498 170 h8 M498 260 h8 M498 290 h8"/>
+      </g>
+    </g>
+    <!-- top bar -->
+    <rect x="0" y="0" width="600" height="38" fill="#0a0a0a" fill-opacity="0.75"/>
+    <text x="20" y="25" font-family="monospace" font-size="14" font-weight="bold" fill="#e8e8e8" letter-spacing="3">FLIGHTSIM</text>
+    <text x="140" y="25" font-family="monospace" font-size="11" fill="#60a5fa">prompt → spec → JSBSim → UE5</text>
+    <circle cx="566" cy="20" r="4" fill="#34d399"/>
+    <text x="490" y="24" font-family="monospace" font-size="10" fill="#9fb3c8">GATES 0-7</text>
+    <!-- bottom prompt -->
+    <rect x="20" y="350" width="560" height="32" fill="#0a0a0a" fill-opacity="0.85" stroke="#1f1f1f"/>
+    <text x="32" y="371" font-family="monospace" font-size="11" fill="#b4b4b4">&gt; fly the c172p through rough wind over the Matterhorn_</text>
+  </g>
+</svg>
