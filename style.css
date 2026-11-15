@@ -1041,46 +1041,8 @@ html, body {
 }
 
 .hw-img { background: #07110c; }
-.robotics-img { background: #100c06; }
 
 /* ---------- AI Toolkit page ---------- */
-.cycle {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border: 1px solid var(--border);
-    margin-bottom: 40px;
-}
-
-.cycle-step {
-    padding: 24px 20px;
-    border-right: 1px solid var(--border);
-    position: relative;
-}
-
-.cycle-step:last-child { border-right: none; }
-
-.cycle-num {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    color: var(--accent-cyan);
-    letter-spacing: 0.1em;
-}
-
-.cycle-title {
-    font-family: var(--sans);
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 6px 0 10px;
-}
-
-.cycle-step p {
-    font-size: 0.8rem;
-    line-height: 1.65;
-    color: var(--text-soft);
-}
-
-.cycle-step strong { color: var(--text); }
-
 .tools-header { margin-bottom: 20px; }
 
 .tool-grid {
@@ -1202,12 +1164,6 @@ a.tool-fav:hover { border-color: #fbbf24; }
 }
 
 .highlight-list li::marker { color: var(--accent-blue); }
-
-@media (max-width: 1024px) {
-    .cycle { grid-template-columns: 1fr; }
-    .cycle-step { border-right: none; border-bottom: 1px solid var(--border); }
-    .cycle-step:last-child { border-bottom: none; }
-}
 
 @media (max-width: 768px) {
     .navbar {
