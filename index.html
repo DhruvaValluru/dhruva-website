@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dhruva Valluru: founder of CUBO and Capture Success. Edge AI, flight simulation, EEG research, and mentoring student builders.">
+    <link rel="canonical" href="https://dhruvavalluru.com/">
     <title>Dhruva Valluru</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,6 +17,8 @@
         <div class="nav-links">
             <a href="#" class="nav-link active" data-page="home">[ HOME ]</a>
             <a href="#" class="nav-link" data-page="projects">[ PROJECTS ]</a>
+            <a href="#" class="nav-link" data-page="mentoring">[ MENTORING ]</a>
+            <a href="#" class="nav-link" data-page="toolkit">[ <span class="nav-ai">AI </span>TOOLKIT ]</a>
             <a href="#" class="nav-link" data-page="about">[ ABOUT ]</a>
         </div>
     </nav>
@@ -31,7 +35,7 @@
                         <span class="tag-sep">/</span>
                         <span class="tag-item">Inventor</span>
                         <span class="tag-sep">/</span>
-                        <span class="tag-item">Student</span>
+                        <span class="tag-item">Mentor</span>
                     </div>
                     <div class="home-cta">
                         <a href="#" class="cta-btn" data-page="projects">EXPLORE PROJECTS →</a>
@@ -73,38 +77,195 @@
                 <p class="page-desc">Startups, research, and things I&rsquo;ve built, newest first. Open <span class="page-desc-hint">[ MORE INFO ]</span> on any project for the full story.</p>
 
                 <div class="projects-grid">
-                    <div class="project-box" id="flightsim">
-                        <div class="project-img-wrapper cover-img flightsim-img">
-                            <img src="assets/flightsim.svg" alt="FlightSim: prompt to spec to JSBSim to Unreal Engine 5" loading="lazy">
+                    <div class="project-box" id="cubo">
+                        <div class="project-img-wrapper cubo-img">
+                            <img src="assets/cubo.png" alt="CUBO dashboard device" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_01 ]</span><span class="project-status">NEW · PUBLIC</span></div>
-                            <h3 class="project-title"><span class="tw">F L I G H T S I M</span></h3>
-                            <p class="project-role">Solo build · Python · JSBSim · Unreal Engine 5</p>
-                            <p class="project-body project-body-short">A <strong>research-grade flight simulator</strong> you drive with <strong>plain English</strong>. Type a scenario, get a <strong>validated, reproducible spec</strong>, then <strong>JSBSim physics</strong> and <strong>Unreal Engine 5</strong> renders. Every claim is checked by <strong>measured gates</strong>.</p>
+                            <div class="project-meta"><span class="project-label">[ MODULE_01 ]</span><span class="project-status">FOUNDER</span></div>
+                            <h3 class="project-title"><span class="tw">C U B O</span></h3>
+                            <p class="project-role">Founder · Edge AI, hardware &amp; app · 1st place, Ready, Set, App!</p>
+                            <p class="project-body project-body-short">A <strong>distracted-driver detection and alert system</strong> built on <strong>quantum-optimized liquid neural networks (CfC)</strong>. Trained on <strong>14,000+ frames</strong> to catch every kind of distraction with <strong>up to 98% accuracy</strong>, across different lighting, drivers, and scenarios.</p>
                             <details class="project-more">
                                 <summary class="project-more-toggle">
                                     <span class="project-more-label">[ MORE INFO ]</span>
                                     <span class="project-more-arrow">▼</span>
                                 </summary>
                                 <div class="project-more-content">
-                                    <p><strong>Problem:</strong> Most sims give you either pretty pictures or trustworthy physics, rarely both, and setting up a scenario means hand-editing config files. Results are hard to reproduce and harder to defend.</p>
-                                    <p><strong>How it works:</strong> A prompt like <em>&ldquo;fly the c172p through a tornado over the prairie&rdquo;</em> is compiled into a <strong>versioned scenario spec</strong>. Every field shows its provenance before anything runs, and impossible requests are <strong>refused by name</strong> instead of silently faked.</p>
-                                    <p><strong>Physics:</strong> Headless <strong>JSBSim</strong> flight dynamics with full telemetry. Real terrain from the <strong>Copernicus DEM</strong> and historical weather from <strong>Open-Meteo</strong>. Winds, turbulence, storms, surfaces, and dates are all spec fields.</p>
-                                    <p><strong>Rendering:</strong> <strong>Unreal Engine 5</strong> host running the same JSBSim model through a patched plugin. Real aircraft meshes are fetched at pinned commits with licenses checked, and placeholder airframes never render.</p>
-                                    <p><strong>Validation:</strong> Built in <strong>gated phases (0&ndash;7), every gate passing</strong>: trim hold, spec checks, control, null tests, terrain, sweeps. Gate 5 shows <strong>trajectory parity across both hosts to 1e-4 of tolerance</strong>. Gate 6 measures the visuals (haze, valley shadows, ground shadow, exposure) straight from the rendered pixels.</p>
-                                    <p><strong>AI compiler:</strong> Works with zero setup through a rate-limited relay, with tiers for a <strong>free local model (Ollama)</strong>, Groq, OpenRouter, or Anthropic. A <strong>deterministic parser</strong> covers the full vocabulary as an offline fallback.</p>
-                                    <p><strong>Ships on:</strong> macOS, Linux, and Windows, with CI on all three. Web app on localhost, plus a one-command Windows deploy.</p>
+                                    <p><strong>Problem:</strong> Distracted driving kills thousands of people every year, and teen drivers are hit hardest. Most &ldquo;safe driving&rdquo; apps score you <em>after</em> the trip. They don&rsquo;t stop the glance in the moment.</p>
+                                    <p><strong>The model:</strong> A <strong>liquid CfC (closed-form continuous-time) neural network</strong> paired with CNN vision features. Liquid networks model <strong>time</strong>, so the model reads a glance as a sequence, not one frame. It was trained on <strong>14,000+ labeled frames</strong> through an automated, multi-agent training pipeline, then quantized for on-device use.</p>
+                                    <p><strong>Two versions:</strong> The same model ships two ways. The <strong>hardware device</strong> runs a shrunk-down CfC in custom ESP32 firmware. The <strong>app</strong> runs the full-size model on the iPhone&rsquo;s Neural Engine. Both are detailed below.</p>
+                                    <p><strong>Recognition:</strong> Won <strong>1st place at Ready, Set, App!</strong> with the CUBO team. I presented CUBO at <strong>CES at 15</strong>, the youngest presenter in its history.</p>
+                                </div>
+                            </details>
+                            <div class="project-affiliation aff-cubo">
+                                <img src="assets/cubo-logo.png" alt="CUBO logo" class="affiliation-logo">
+                                <span class="affiliation-text">CUBO · 1st place, Ready, Set, App! · Presented at CES</span>
+                            </div>
+                            <div class="project-tech">
+                                <code>Liquid Neural Nets (CfC/NCP)</code>
+                                <code>CNNs</code>
+                                <code>Python</code>
+                                <code>Time-Series ML</code>
+                                <code>Quantization</code>
+                                <code>TensorFlow Lite</code>
+                                <code>Core ML</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>cubocruise.com</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/Full-CUBO-APP" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Full CUBO App</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/CUBO-MEDIAPIPE-YOLO-DEMO" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Detector Prototype</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-connector">
+                        <div class="connector-line"></div>
+                        <span class="connector-label">// VERSION 1 · HARDWARE</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <div class="project-box reverse project-sub" id="cubo-hardware">
+                        <div class="project-img-wrapper cover-img hw-img">
+                            <img src="assets/cubo-hardware.svg" alt="CUBO hardware diagram: ESP32-CAM PCB, IR camera, accelerometer, amplifier and speakers" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_01a ]</span><span class="project-status">HARDWARE</span></div>
+                            <h3 class="project-title"><span class="tw">C U B O</span> &nbsp; <span class="tw">D E V I C E</span></h3>
+                            <p class="project-role">Custom PCB · ESP32-CAM firmware · on-device inference</p>
+                            <p class="project-body project-body-short">A <strong>custom ESP32-CAM PCB</strong> that powers on with the car and runs CUBO&rsquo;s distraction AI <strong>entirely on-device</strong>, using a <strong>12MP infrared camera</strong> and an <strong>accelerometer</strong>. When it spots a distraction, a <strong>MAX98357A amp</strong> drives two speakers to alert the driver instantly.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Electronics:</strong> Custom ESP32-CAM board with a 12MP IR camera (works at night), an accelerometer for motion context, and a MAX98357A I&sup2;S amplifier driving two speakers.</p>
+                                    <p><strong>Firmware:</strong> The CfC model is shrunk down and built into the PCB&rsquo;s firmware, running at a few FPS on the microcontroller. No phone or cloud is needed.</p>
+                                    <p><strong>Enclosure:</strong> Everything sits inside a heat-resistant polycarbonate shell built to survive a dashboard in summer.</p>
+                                    <p><strong>Tradeoffs:</strong> It turns on automatically with the car and <strong>can&rsquo;t be skipped</strong>. The cost is a higher build price and the need for its own update system.</p>
                                 </div>
                             </details>
                             <div class="project-tech">
+                                <code>ESP32</code>
+                                <code>PCB Design</code>
+                                <code>Embedded C/C++</code>
+                                <code>IR Camera</code>
+                                <code>TensorFlow Lite</code>
+                                <code>Raspberry Pi</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>cubocruise.com</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-connector">
+                        <div class="connector-line"></div>
+                        <span class="connector-label">// VERSION 2 · APP</span>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <div class="project-box project-sub" id="cubo-app">
+                        <div class="project-img-wrapper cubo-app-img">
+                            <img src="assets/cubo-app.png" alt="CUBO app screenshot" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_01b ]</span><span class="project-status">LIVE</span></div>
+                            <h3 class="project-title"><span class="tw">C U B O</span> &nbsp; <span class="tw">A P P</span></h3>
+                            <p class="project-role">Cross-platform · iOS, Android &amp; web · React Native + Expo</p>
+                            <p class="project-body project-body-short">A <strong>cross-platform driver-safety app</strong> with a custom design system, animated score rings, trend charts, and <strong>real-time face tracking</strong> that measures head turn to tell when a driver looks away. The full-size CfC model runs on the <strong>iPhone&rsquo;s Neural Engine at 30+ FPS</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>On-device AI:</strong> The full CfC model runs on the Neural Engine via Core ML, using the phone&rsquo;s camera, GPS, and motion sensors. On web, <strong>MediaPipe Face Landmarker (WASM)</strong> and the getUserMedia camera API handle head-pose estimation in the browser.</p>
+                                    <p><strong>Design:</strong> Custom UI/UX design system on React Native Paper (Material 3), animated score rings with Reanimated + react-native-svg, and custom data visualizations for trends.</p>
+                                    <p><strong>Driving features:</strong> Turn-by-turn maps (MapLibre, OSRM), trip summaries with attention markers, focus scores, hazard reporting, family sharing, and a voice assistant.</p>
+                                    <p><strong>Engineering:</strong> One codebase for iOS, Android, and web: React Navigation (native stack + bottom tabs), platform-specific modules (<code>.web.tsx</code>), react-native-web, and EAS Build for deployment. Firebase handles accounts and sync.</p>
+                                    <p><strong>Tradeoff:</strong> Nothing to buy, and it runs at full model size, but the app has to <strong>stay open on screen</strong> while driving.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>React Native</code>
+                                <code>Expo</code>
+                                <code>TypeScript</code>
+                                <code>Reanimated</code>
+                                <code>MediaPipe</code>
+                                <code>Core ML</code>
+                                <code>EAS Build</code>
+                                <code>Firebase</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://cubo-app-cac.pages.dev/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>Open the App</span>
+                            </a>
+                            <a href="https://github.com/DhruvaValluru/Full-CUBO-APP" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Code</span>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=7hDUQYFQ1TE" class="project-link-icon project-link-youtube" target="_blank" rel="noopener" title="Demo Video">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <span>Demo</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse" id="flightsim">
+                        <div class="project-img-wrapper cover-img flightsim-img">
+                            <img src="assets/flightsim.svg" alt="FlightSim: prompt to spec to JSBSim to Unreal Engine 5" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_02 ]</span><span class="project-status">ISL · V3</span></div>
+                            <h3 class="project-title"><span class="tw">F L I G H T S I M</span></h3>
+                            <p class="project-role">Built from scratch · Department of War&ndash;funded ISL lab</p>
+                            <p class="project-body project-body-short">An <strong>agentic AI for synthetic data collection</strong>, built from scratch. Give it a plain-English prompt and it plans the scenario, then <strong>flies professional aircraft models</strong> through a <strong>photorealistic physics + graphics engine</strong> while virtual cameras capture <strong>images with masks and bounding boxes</strong> for training downstream AI models.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Why:</strong> Government simulation software is powerful but painfully complex. I built FlightSim so anyone can set up a flight visually instead of typing config values.</p>
+                                    <p><strong>Prompt &rarr; spec:</strong> A plain-English prompt compiles into a <strong>scenario spec</strong> that you review and correct in a <strong>Q&amp;A round</strong> before anything flies. LLMs (OpenAI / Ollama / Groq) do the parsing, with a <strong>deterministic fallback parser</strong>. Impossible requests are refused by name.</p>
+                                    <p><strong>Draw your flight:</strong> A <strong>pen tool</strong> lets you literally draw the flight path over the map. The system turns it into waypoints the autopilot flies, replacing manual coordinate entry entirely.</p>
+                                    <p><strong>Camera rig:</strong> A <strong>3D camera-placement view</strong>: drag cameras around a model of the plane and watch the framing update live. Camera poses are solved automatically for synthetic image + annotation capture.</p>
+                                    <p><strong>Live telemetry:</strong> Live plots of flight path over terrain, altitude, and lift / drag / g-loading, synced to the physics engine.</p>
+                                    <p><strong>Engine:</strong> <strong>JSBSim</strong> flight dynamics bridged into <strong>Unreal Engine</strong> through a custom plugin + C++ bridge. Real terrain (Copernicus DEM), real weather (ERA5 / Open-Meteo), atmospheric modeling, autopilot and control systems, and a 3D asset pipeline (FBX/glTF aircraft import, materials).</p>
+                                    <p><strong>Rigor:</strong> Built in validated phases where every gate passes, including cross-host trajectory parity to 1e-4 of tolerance and visual checks measured from rendered pixels. pytest + mutation testing, GitHub Actions CI on macOS, Linux, and Windows.</p>
+                                    <p><strong>Team:</strong> Mentored by <strong>Prof. Sambit Bhattacharya</strong>, project-managed by <strong>NASA Goddard engineer Michael Backus</strong>, and developed under a <strong>Department of War&ndash;funded ISL lab</strong>.</p>
+                                </div>
+                            </details>
+                            <div class="project-highlight"><span class="highlight-label">COOLEST PART</span><p>Reverse-engineering <strong>X-Plane</strong>, one of the best airplane-physics simulators in the world, with <strong>Ghidra</strong> to understand its physics components, terrain, and aircraft, and bring those ideas into my own engine.</p></div>
+                            <div class="project-affiliation aff-isl">
+                                <img src="assets/flightsim-mark.svg" alt="ISL lab" class="affiliation-logo">
+                                <span class="affiliation-text">Mentor: Prof. Sambit Bhattacharya · PM: Michael Backus, NASA Goddard · Department of War&ndash;funded ISL lab</span>
+                            </div>
+                            <div class="project-tech">
                                 <code>Python</code>
-                                <code>JSBSim</code>
-                                <code>Unreal Engine 5</code>
                                 <code>C++</code>
-                                <code>LLMs</code>
+                                <code>Unreal Engine</code>
+                                <code>JSBSim</code>
+                                <code>LLM Agents</code>
                                 <code>FastAPI</code>
-                                <code>GIS</code>
+                                <code>Geospatial</code>
+                                <code>GitHub Actions</code>
                             </div>
                             <div class="project-links">
                             <a href="https://github.com/DhruvaValluru/FlightSim-PublicVERSION" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
@@ -115,185 +276,38 @@
                         </div>
                     </div>
 
-                    <div class="project-box reverse" id="cubo">
-                        <div class="project-img-wrapper cubo-img">
-                            <img src="assets/cubo.png" alt="CUBO dashboard device" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_02 ]</span><span class="project-status">FOUNDER</span></div>
-                            <h3 class="project-title"><span class="tw">C U B O</span></h3>
-                            <p class="project-role">Founder · Hardware, AI &amp; product</p>
-                            <p class="project-body project-body-short">A teen-led <strong>driver-safety startup</strong>. A compact dash device uses <strong>edge AI</strong> to watch driver attention and <strong>alerts instantly</strong> when it spots distraction. Presented at <strong>CES at 15</strong>.</p>
-                            <details class="project-more">
-                                <summary class="project-more-toggle">
-                                    <span class="project-more-label">[ MORE INFO ]</span>
-                                    <span class="project-more-arrow">▼</span>
-                                </summary>
-                                <div class="project-more-content">
-                                    <p><strong>Problem:</strong> Distracted driving kills thousands of people every year, and teen drivers are hit hardest. Phone-based &ldquo;safe driving&rdquo; apps mostly score you <em>after</em> the trip. They don&rsquo;t stop the glance in the moment.</p>
-                                    <p><strong>Device:</strong> A small camera module on the dashboard runs <strong>computer vision on-device</strong>. Nothing has to be streamed to the cloud to raise an alert, so it stays fast and private.</p>
-                                    <p><strong>Detection:</strong> The prototype detector combines <strong>MediaPipe Face Mesh head-pose</strong> (yaw/pitch/roll) with <strong>YOLOv8 phone detection</strong>. The key idea: holding a phone isn&rsquo;t distraction, <em>looking at it</em> is. Frame-buffer smoothing cuts false alarms.</p>
-                                    <p><strong>Status:</strong> Working prototype, companion app live on the web, and a public demo at <strong>CES</strong>. I was the youngest presenter in its history.</p>
-                                </div>
-                            </details>
-                            <div class="project-tech">
-                                <code>Edge AI</code>
-                                <code>Hardware</code>
-                                <code>Computer Vision</code>
-                                <code>MediaPipe</code>
-                                <code>YOLOv8</code>
-                                <code>Startup</code>
-                            </div>
-                            <div class="project-links">
-                            <a href="https://cubocruise.com/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                                <span>cubocruise.com</span>
-                            </a>
-                            <a href="https://github.com/DhruvaValluru/CUBO-MEDIAPIPE-YOLO-DEMO" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>Detector Demo</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-connector">
-                        <div class="connector-line"></div>
-                        <span class="connector-label">// CONNECTED MODULE</span>
-                        <div class="connector-line"></div>
-                    </div>
-
-                    <div class="project-box project-sub" id="cubo-app">
-                        <div class="project-img-wrapper cubo-app-img">
-                            <img src="assets/cubo-app.png" alt="CUBO app screenshot" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_02b ]</span><span class="project-status">LIVE</span></div>
-                            <h3 class="project-title"><span class="tw">C U B O</span> &nbsp; <span class="tw">A P P</span></h3>
-                            <p class="project-role">Co-built with the CUBO team · Expo / React Native Web</p>
-                            <p class="project-body project-body-short">The <strong>CUBO companion app</strong>, now a <strong>full web app</strong> anyone can open: <strong>turn-by-turn maps</strong>, <strong>on-device attention monitoring</strong>, trip insights, family sharing, and a built-in <strong>voice assistant</strong>.</p>
-                            <details class="project-more">
-                                <summary class="project-more-toggle">
-                                    <span class="project-more-label">[ MORE INFO ]</span>
-                                    <span class="project-more-arrow">▼</span>
-                                </summary>
-                                <div class="project-more-content">
-                                    <p><strong>Maps &amp; driving:</strong> Full-screen <strong>MapLibre GL</strong> maps (OpenFreeMap), address search with Photon, routing with OSRM. Route previews, maneuver instructions, speed, hazard reporting, and voice route requests.</p>
-                                    <p><strong>Attention monitoring:</strong> <strong>MediaPipe Face Landmarker</strong> runs locally on camera frames to estimate head movement and eye closure. A guided parked calibration learns your baseline. Alerts only fire above 3&nbsp;mph with fresh GPS, and missing data is reported, never counted as &ldquo;attentive.&rdquo;</p>
-                                    <p><strong>Insights:</strong> Focus scores built from measured attentive driving time, trip summaries with route maps and attention markers, distraction trends, and goals.</p>
-                                    <p><strong>Cubo Assistant:</strong> Account-aware answers, a spoken Voice Assist mode, and an optional general-AI mode running a <strong>Llama model in the browser via WebLLM/WebGPU</strong>, with no paid API needed.</p>
-                                    <p><strong>Accounts &amp; privacy:</strong> Firebase Auth + Firestore with owner-only sync rules. Camera frames are analyzed locally and never uploaded, and raw audio is never stored.</p>
-                                    <p><strong>Earlier version:</strong> The original synced app (React Native + Expo) paired with the dash device for distraction scores, time tracking, and app focus-blocking. Demo on YouTube.</p>
-                                </div>
-                            </details>
-                            <div class="project-tech">
-                                <code>React Native</code>
-                                <code>TypeScript</code>
-                                <code>Expo</code>
-                                <code>Firebase</code>
-                                <code>MapLibre</code>
-                                <code>MediaPipe</code>
-                                <code>WebLLM</code>
-                            </div>
-                            <div class="project-links">
-                            <a href="https://cubo-app-cac.pages.dev/" class="project-link-icon" target="_blank" rel="noopener" title="Website">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                                <span>Open the App</span>
-                            </a>
-                            <a href="https://github.com/DhruvaValluru/Full-CUBO-APP" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>Full App</span>
-                            </a>
-                            <a href="https://github.com/DhruvaValluru/CUBO-APP-SYNCE4DDEVICE" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>Synced App v1</span>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=7hDUQYFQ1TE" class="project-link-icon project-link-youtube" target="_blank" rel="noopener" title="Demo Video">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                                <span>Demo</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-box reverse" id="brainwaves">
-                        <div class="project-img-wrapper">
-                            <img src="assets/brainwaves.jpg" alt="Brainwaves EEG research" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_03 ]</span><span class="project-status">RESEARCH</span></div>
-                            <h3 class="project-title"><span class="tw">B R A I N W A V E S</span></h3>
-                            <p class="project-role">Researcher · co-built with Weill Cornell faculty</p>
-                            <p class="project-body project-body-short"><strong>3 novel interregional EEG signatures</strong> for <strong>early neurological decline</strong>. <strong>Connectivity-based machine learning</strong> that forecasts <strong>brain-state transitions</strong>, tested across <strong>6 clinical EEG datasets</strong>.</p>
-                            <details class="project-more">
-                                <summary class="project-more-toggle">
-                                    <span class="project-more-label">[ MORE INFO ]</span>
-                                    <span class="project-more-arrow">▼</span>
-                                </summary>
-                                <div class="project-more-content">
-                                    <p><strong>Problem:</strong> Seizures strike in seconds. Clinicians see them on EEG only after onset. Region-by-region EEG prediction has plateaued.</p>
-                                    <p><strong>Approach:</strong> Model the <strong>cross-regional connectivity</strong>, not the regions. Three novel <strong>interregional communication signatures</strong> emerged, each a potential early biomarker of neurological decline.</p>
-                                    <p><strong>Build:</strong> <strong>BFI-Pipeline</strong> (Brain Fragility Index): raw EEG in, preprocessing and connectivity + band-power features out, then <strong>XGBoost</strong> and <strong>BiLSTM</strong> models forecasting brain-state transitions.</p>
-                                    <p><strong>Results:</strong> Pre-seizure detection on <strong>CHB-MIT</strong>: <strong>0.85 mean AUROC</strong> per patient after fine-tuning (24 patients, up from 0.77). On <strong>I-CARE</strong> ICU EEG: <strong>0.996 AUROC</strong> for segment-level coma outcome and <strong>0.999</strong> for burst-suppression detection. <strong>Sleep-EDF</strong> wake vs. sleep: <strong>0.92 AUROC</strong>.</p>
-                                    <p><strong>Data:</strong> Multi-site clinical EEG: CHB-MIT, Siena, I-CARE, Sleep-EDF, TUH EEG Corpus, and PhysioNet. Epilepsy, ICU/coma, sleep, stroke, and delirium cohorts.</p>
-                                    <p><strong>Team:</strong> Mentored by and co-built with professors at Weill Cornell Graduate School of Medical Sciences.</p>
-                                </div>
-                            </details>
-                            <div class="project-affiliation">
-                                <img src="assets/weill-cornell.svg" alt="Weill Cornell Graduate School of Medical Sciences" class="affiliation-logo">
-                                <span class="affiliation-text">In association with Weill Cornell Graduate School of Medical Sciences</span>
-                            </div>
-                            <div class="project-tech">
-                                <code>EEG</code>
-                                <code>XGBoost</code>
-                                <code>BiLSTM</code>
-                                <code>Signal Processing</code>
-                                <code>Neurotech</code>
-                                <code>Research</code>
-                            </div>
-                            <div class="project-links">
-                            <a href="https://github.com/DhruvaValluru/Dhruva-BFI-Pipline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>My Pipeline</span>
-                            </a>
-                            <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>Team BFI-Pipeline</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="project-box" id="alfred">
                         <div class="project-img-wrapper logo-img alfred-img">
                             <img src="assets/alfred-logo.png" alt="Alfred AI logo" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_04 ]</span><span class="project-status">NEW</span></div>
+                            <div class="project-meta"><span class="project-label">[ MODULE_03 ]</span><span class="project-status project-fav">★ MY FAVORITE</span></div>
                             <h3 class="project-title"><span class="tw">A L F R E D</span> &nbsp; <span class="tw">A I</span></h3>
-                            <p class="project-role">Co-builder · Python · Claude API · Windows</p>
-                            <p class="project-body project-body-short"><em>&ldquo;Every device, one butler.&rdquo;</em> A <strong>voice assistant</strong> that actually <strong>works inside your apps</strong>: it opens programs, clicks, types, and edits documents across your devices, with a <strong>real Windows installer</strong>.</p>
+                            <p class="project-role">Built with friends · Python 3.12 · Claude API · Windows</p>
+                            <p class="project-body project-body-short">Inspired by Tony Stark&rsquo;s Jarvis, a few friends and I built our own. Alfred is a <strong>voice and remote-control assistant</strong> that <strong>sees and acts across all your devices</strong>. It works <em>inside</em> apps directly instead of clicking around on screenshots.</p>
                             <details class="project-more">
                                 <summary class="project-more-toggle">
                                     <span class="project-more-label">[ MORE INFO ]</span>
                                     <span class="project-more-arrow">▼</span>
                                 </summary>
                                 <div class="project-more-content">
-                                    <p><strong>Problem:</strong> Voice assistants can set timers but can&rsquo;t <em>do</em> anything inside the apps you use. Screenshot-and-click agents are slow and fragile.</p>
-                                    <p><strong>How it works:</strong> Alfred drives apps through <strong>Windows UI Automation</strong> (the same API screen readers use) and <strong>COM</strong> for Office. It doesn&rsquo;t need to move your mouse, and it can work in several apps at once in the background.</p>
-                                    <p><strong>Fallback:</strong> For apps those APIs can&rsquo;t reach (games, canvases, custom UIs), it falls back to <strong>computer use</strong>: Claude reads screenshots and drives the real mouse and keyboard.</p>
-                                    <p><strong>Speed:</strong> An intent router sends common commands down a <strong>~50&nbsp;ms no-LLM fast path</strong>, and only complex tasks go to the Claude orchestrator. The goal is spoken replies in <strong>under ~800&nbsp;ms</strong>.</p>
-                                    <p><strong>Architecture:</strong> A hub &ldquo;brain&rdquo; (voice gateway, device registry, memory, policy, audit log) connected to every device over an <strong>encrypted mesh</strong>. Windows first, then Macs, iPhones, and iPads.</p>
-                                    <p><strong>Ships as:</strong> A desktop app with tray icon, a big STOP button, approvals, and an activity log, plus a no-admin Windows installer built by CI.</p>
+                                    <p><strong>Architecture:</strong> A central hub with an <strong>LLM orchestrator</strong> (Claude tool use) sends tasks to each device. Built Windows-to-Windows first, with Macs, iPhones, and iPads joining later.</p>
+                                    <p><strong>Real control:</strong> Controls apps through <strong>Windows UI Automation</strong>, <strong>Excel/Word COM</strong>, and app APIs. When those can&rsquo;t reach an app, it falls back to <strong>Claude computer use</strong>.</p>
+                                    <p><strong>Voice:</strong> A fast voice pipeline: wake word, <strong>local Whisper</strong> speech-to-text, and OpenAI voice replies. Common commands skip the LLM entirely for near-instant response.</p>
+                                    <p><strong>Multi-device:</strong> Pair multiple PCs over <strong>Tailscale</strong> with token authentication, or control Alfred remotely through a <strong>Telegram bot</strong>.</p>
+                                    <p><strong>Safety:</strong> A permission system asks for confirmation before risky actions like <strong>send, delete, or buy</strong>, and every action goes into an audit log.</p>
+                                    <p><strong>Ships as:</strong> A desktop app with a <strong>CI-built Windows installer</strong> you can download, or run it from source.</p>
                                 </div>
                             </details>
                             <div class="project-tech">
-                                <code>Python</code>
-                                <code>Claude API</code>
+                                <code>Python 3.12</code>
+                                <code>Claude Tool Use</code>
                                 <code>Computer Use</code>
+                                <code>Whisper</code>
                                 <code>UI Automation</code>
-                                <code>Voice AI</code>
-                                <code>Windows</code>
+                                <code>COM</code>
+                                <code>Tailscale</code>
+                                <code>Telegram</code>
                             </div>
                             <div class="project-links">
                             <a href="https://github.com/iampythoncoder/Alfred-AI" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
@@ -308,12 +322,142 @@
                         </div>
                     </div>
 
-                    <div class="project-box reverse" id="equalvoice">
+                    <div class="project-box reverse" id="bfi">
+                        <div class="project-img-wrapper">
+                            <img src="assets/brainwaves.jpg" alt="Brainwaves EEG research poster" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_04 ]</span><span class="project-status">RESEARCH</span></div>
+                            <h3 class="project-title"><span class="tw">B F I</span> &nbsp; <span class="tw">P I P E L I N E</span></h3>
+                            <p class="project-role">Brainwaves research · co-built with Weill Cornell faculty</p>
+                            <p class="project-body project-body-short">A <strong>seizure-prediction system</strong> that turns raw EEG into a <strong>Brain Fragility Index (0&ndash;100)</strong>, showing how close a patient&rsquo;s brain is to a pre-seizure state. It <strong>fires an alarm</strong> if the score stays above <strong>70 for 2 minutes</strong>.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Problem:</strong> Seizures strike in seconds, and clinicians usually see them on EEG only after onset. Region-by-region EEG prediction has plateaued.</p>
+                                    <p><strong>Approach:</strong> Model the <strong>cross-regional connectivity</strong>, not just the regions. This surfaced <strong>3 novel interregional EEG signatures</strong>, each a potential early biomarker of neurological decline.</p>
+                                    <p><strong>Pipeline:</strong> EEG preprocessing &rarr; <strong>spectral, complexity, coordination, and network features</strong> &rarr; a <strong>BiLSTM with attention</strong> &rarr; the BFI score and alarm logic. XGBoost baselines run alongside.</p>
+                                    <p><strong>Evaluation:</strong> <strong>Leave-one-site-out cross-validation across 8 datasets</strong> (CHB-MIT, TUH, Siena, I-CARE, Sleep-EDF, and more), so the model is tested on hospitals it has never seen.</p>
+                                    <p><strong>Results:</strong> Pre-seizure detection on CHB-MIT: <strong>0.85 mean per-patient AUROC</strong> after fine-tuning (24 patients). I-CARE ICU EEG: <strong>0.996 AUROC</strong> for segment-level coma outcome and <strong>0.999</strong> for burst suppression. Sleep-EDF wake vs. sleep: <strong>0.92</strong>.</p>
+                                    <p><strong>Scale:</strong> Training large models on large amounts of multi-site clinical EEG: epilepsy, ICU/coma, sleep, stroke, and delirium cohorts.</p>
+                                </div>
+                            </details>
+                            <div class="project-affiliation">
+                                <img src="assets/weill-cornell.svg" alt="Weill Cornell Graduate School of Medical Sciences" class="affiliation-logo">
+                                <span class="affiliation-text">In association with Weill Cornell Graduate School of Medical Sciences</span>
+                            </div>
+                            <div class="project-tech">
+                                <code>Python</code>
+                                <code>EEG</code>
+                                <code>BiLSTM + Attention</code>
+                                <code>XGBoost</code>
+                                <code>Signal Processing</code>
+                                <code>Research</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://github.com/DhruvaValluru/Dhruva-BFI-Pipline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>BFI Pipeline</span>
+                            </a>
+                            <a href="https://github.com/Ketav-cell/BFI-Pipeline" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                <span>Team Repo</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box" id="capture-success">
+                        <div class="project-img-wrapper photo-img">
+                            <img src="assets/capture-success-session.jpg" alt="Capture Success accelerator session with student founders" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_05 ]</span><span class="project-status">FOUNDER</span></div>
+                            <h3 class="project-title"><span class="tw">C A P T U R E</span> &nbsp; <span class="tw">S U C C E S S</span></h3>
+                            <p class="project-role">Founder · Free high-school startup accelerator · RTP, NC</p>
+                            <p class="project-body project-body-short">I founded a <strong>free startup accelerator for high schoolers</strong> after seeing that no real one existed in the RTP area. I recruited <strong>10 startup teams</strong> of 4&ndash;5 founders each (<strong>~40 students</strong>) for a <strong>6-week program</strong>. The latest cohort ended Oct 19.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Teaching:</strong> Every week for 6 weeks, I taught a class to the entire cohort, following a curriculum I built for each week.</p>
+                                    <p><strong>Mentoring:</strong> Five other days each week, I led a <strong>90-minute one-on-one call</strong> with one of the 5 teams I personally mentored, while my co-leaders took the other 5.</p>
+                                    <p><strong>How I mentor:</strong> I start every call by asking what&rsquo;s blocking the team and adjust my plan around their answer instead of using one plan for everyone. We review what we learned in class and put it into practice. Each team gets resources that fit its stage and small weekly goals, so it stays accountable between calls.</p>
+                                    <p><strong>Experience I bring:</strong> I use the technical and pitching experience from building and pitching CUBO to help each team with whatever it needs most that week.</p>
+                                </div>
+                            </details>
+                            <div class="project-highlight"><span class="highlight-label">COOLEST PART</span><p>One of my teams won <strong>$4,000</strong> at an outside pitch competition just a week and a half after the program ended.</p></div>
+                            <div class="project-affiliation aff-capture">
+                                <img src="assets/capture-success.png" alt="Capture Success logo" class="affiliation-logo">
+                                <span class="affiliation-text">Capture Success · 10 teams · ~40 student founders · 6 weeks</span>
+                            </div>
+                            <div class="project-tech">
+                                <code>Founder</code>
+                                <code>Curriculum Design</code>
+                                <code>Mentorship</code>
+                                <code>Pitching</code>
+                                <code>Startups</code>
+                            </div>
+                            <div class="project-links">
+                            <a href="https://capturesuccess.org" class="project-link-icon" target="_blank" rel="noopener" title="Website">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                                <span>capturesuccess.org</span>
+                            </a>
+                            <a href="https://docs.google.com/presentation/d/1WMf4CDEELA_VXPo-5knuEwKrHVlJJZxqviSBJ4ocJTQ/edit?usp=sharing" class="project-link-icon" target="_blank" rel="noopener" title="Document">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
+                                <span>Curriculum</span>
+                            </a>
+                            <a href="https://drive.google.com/drive/u/2/folders/13oBoF-0BUIXH8PcY318xjX-swlZHFk3s" class="project-link-icon" target="_blank" rel="noopener" title="Photos">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                <span>Session Photos</span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box reverse" id="robotics">
+                        <div class="project-img-wrapper cover-img robotics-img">
+                            <img src="assets/robotics.svg" alt="Robotics mentoring business: 6 teams, 4 mentors" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta"><span class="project-label">[ MODULE_06 ]</span><span class="project-status">FOUNDER</span></div>
+                            <h3 class="project-title"><span class="tw">R O B O T I C S</span> &nbsp; <span class="tw">M E N T O R I N G</span></h3>
+                            <p class="project-role">Founder · 9th&ndash;10th grade · Former state robotics champion</p>
+                            <p class="project-body project-body-short">I started my own <strong>robotics competition business</strong> and built <strong>6 competitive teams</strong>, each paying <strong>$500</strong> to join. I mentored 2 teams myself and <strong>managed 4 mentors</strong> who led the other 4.</p>
+                            <details class="project-more">
+                                <summary class="project-more-toggle">
+                                    <span class="project-more-label">[ MORE INFO ]</span>
+                                    <span class="project-more-arrow">▼</span>
+                                </summary>
+                                <div class="project-more-content">
+                                    <p><strong>Running it:</strong> I onboarded each mentor and trained them on what to teach and how to mentor. As a former state robotics champion, I taught them both the technical side and the competition side.</p>
+                                    <p><strong>What we taught:</strong> Design, building, programming, competition strategy, and teamwork.</p>
+                                    <p><strong>How:</strong> Breakout groups so each student could focus on their own role and get more hands-on time. Honest feedback after every practice so teams could fix problems fast. My own competition experience helped them prepare for the pressure of real matches.</p>
+                                </div>
+                            </details>
+                            <div class="project-tech">
+                                <code>Robotics</code>
+                                <code>Business</code>
+                                <code>Mentor Training</code>
+                                <code>Competition Strategy</code>
+                            </div>
+                            <div class="project-links">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-box" id="equalvoice">
                         <div class="project-img-wrapper cover-img equalvoice-img">
                             <img src="assets/equalvoice.svg" alt="EqualVoice: accented vs native speech waveforms" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_05 ]</span><span class="project-status">HACKATHON</span></div>
+                            <div class="project-meta"><span class="project-label">[ MODULE_07 ]</span><span class="project-status">HACKATHON</span></div>
                             <h3 class="project-title"><span class="tw">E Q U A L V O I C E</span></h3>
                             <p class="project-role">SCAI Duke 2026 Hackathon · team of 4</p>
                             <p class="project-body project-body-short">A <strong>benchmark for voice-AI bias</strong>. It measures how <strong>speech recognition fails accented speakers</strong> and how those errors <strong>cascade into misrouted support calls</strong>, lost time, and real dollars.</p>
@@ -323,10 +467,9 @@
                                     <span class="project-more-arrow">▼</span>
                                 </summary>
                                 <div class="project-more-content">
-                                    <p><strong>Inspiration:</strong> We come from immigrant families. Our parents regularly get stuck in automated phone systems that can&rsquo;t understand accented speech. Those systems claim high accuracy but systematically fail people like them.</p>
-                                    <p><strong>What it measures:</strong> <strong>Character/word error rate</strong> by accent group, <strong>intent-classification errors</strong> (misrouted calls), a <strong>Disparity Index</strong> between ESL and native speakers, and the <strong>downstream cost</strong> in time and money.</p>
-                                    <p><strong>Pipeline:</strong> Audio &rarr; <strong>OpenAI Whisper</strong> &rarr; intent classifier &rarr; routing logic &rarr; metrics. Built on <strong>Mozilla Common Voice</strong>, with paths for CallHome and GLOBE.</p>
-                                    <p><strong>Challenge:</strong> Massive audio data under tight compute limits: corrupted files, inconsistent labels, and benchmarks that had to be carefully controlled so they wouldn&rsquo;t exaggerate or hide bias.</p>
+                                    <p><strong>Inspiration:</strong> We come from immigrant families. Our parents regularly get stuck in automated phone systems that can&rsquo;t understand accented speech.</p>
+                                    <p><strong>What it measures:</strong> Character/word error rate by accent group, intent-classification errors (misrouted calls), a <strong>Disparity Index</strong> between ESL and native speakers, and the downstream cost in time and money.</p>
+                                    <p><strong>Pipeline:</strong> Audio &rarr; <strong>OpenAI Whisper</strong> &rarr; intent classifier &rarr; routing &rarr; metrics, on Mozilla Common Voice.</p>
                                 </div>
                             </details>
                             <div class="project-tech">
@@ -335,7 +478,6 @@
                                 <code>ASR</code>
                                 <code>NLP</code>
                                 <code>AI Fairness</code>
-                                <code>Hugging Face</code>
                             </div>
                             <div class="project-links">
                             <a href="https://github.com/ZelinZhu-Richard/SCAI-duke-2026" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
@@ -346,52 +488,12 @@
                         </div>
                     </div>
 
-                    <div class="project-box" id="capture-success">
-                        <div class="project-img-wrapper logo-img capture-img">
-                            <img src="assets/capture-success.png" alt="Capture Success logo" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_06 ]</span><span class="project-status">CO-FOUNDER</span></div>
-                            <h3 class="project-title"><span class="tw">C A P T U R E</span> &nbsp; <span class="tw">S U C C E S S</span></h3>
-                            <p class="project-role">Co-founder · Student startup network, NC Triangle</p>
-                            <p class="project-body project-body-short">A <strong>student startup network</strong> in the Triangle. We run a <strong>free six-week accelerator</strong> at <strong>Frontier RTP</strong> that helps high schoolers turn ideas into real companies.</p>
-                            <details class="project-more">
-                                <summary class="project-more-toggle">
-                                    <span class="project-more-label">[ MORE INFO ]</span>
-                                    <span class="project-more-arrow">▼</span>
-                                </summary>
-                                <div class="project-more-content">
-                                    <p><strong>Why:</strong> Students build impressive things, but almost nothing is set up to help a teenager turn a project into a company: no cohort, no mentors, no demo day.</p>
-                                    <p><strong>What we run:</strong> A free six-week accelerator with a cohort, partner network, mentorship, and company profiles. The <strong>Fall 2026 cohort</strong> is underway.</p>
-                                    <p><strong>My role:</strong> Co-founded the network and helped build the accelerator program.</p>
-                                    <p><strong>Site:</strong> Built with Next.js 16, React 19, and Tailwind v4. All content lives in one source-of-truth file.</p>
-                                </div>
-                            </details>
-                            <div class="project-tech">
-                                <code>Community</code>
-                                <code>Accelerator</code>
-                                <code>Startups</code>
-                                <code>Next.js</code>
-                            </div>
-                            <div class="project-links">
-                            <a href="https://capture-success.vercel.app" class="project-link-icon" target="_blank" rel="noopener" title="Website">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-                                <span>capturesuccess.org</span>
-                            </a>
-                            <a href="https://github.com/iampythoncoder/capture-success-website" class="project-link-icon project-link-github" target="_blank" rel="noopener" title="GitHub">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                                <span>Site Code</span>
-                            </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="project-box reverse" id="closet-combos">
                         <div class="project-img-wrapper">
                             <img src="assets/closet-combos.jpg" alt="Closet Combos" loading="lazy">
                         </div>
                         <div class="project-info">
-                            <div class="project-meta"><span class="project-label">[ MODULE_07 ]</span></div>
+                            <div class="project-meta"><span class="project-label">[ MODULE_08 ]</span></div>
                             <h3 class="project-title"><span class="tw">C L O S E T</span> &nbsp; <span class="tw">C O M B O S</span></h3>
                             <p class="project-role">Founder · AI fashion app</p>
                             <p class="project-body project-body-short">An <strong>AI wardrobe app</strong>: upload your clothes and get <strong>outfit combinations from what you already own</strong>, plus recommendations for new pieces that <strong>actually match your closet</strong>.</p>
@@ -401,8 +503,7 @@
                                     <span class="project-more-arrow">▼</span>
                                 </summary>
                                 <div class="project-more-content">
-                                    <p><strong>Problem:</strong> Most people wear a small slice of their closet and buy clothes that don&rsquo;t go with anything they own.</p>
-                                    <p><strong>How it works:</strong> Photograph your clothes, and the app catalogs each item, then uses AI to generate outfit combinations from your real wardrobe.</p>
+                                    <p><strong>How it works:</strong> Photograph your clothes, and the app catalogs each item, then uses AI to generate outfits from your real wardrobe.</p>
                                     <p><strong>Shopping:</strong> Recommends new items that fill gaps and pair with what you have, so you buy smarter instead of buying more.</p>
                                     <p><strong>Growth:</strong> Built an audience on TikTok at <strong>@closet_combos</strong>.</p>
                                 </div>
@@ -455,6 +556,148 @@
             </div>
         </section>
 
+        <!-- Mentoring Page -->
+        <section class="page" id="mentoring">
+            <div class="projects-container">
+                <div class="page-header">
+                    <span class="header-prefix">/ </span>
+                    <h2 class="page-title">M E N T O R I N G</h2>
+                </div>
+                <p class="page-desc">I&rsquo;ve lived both sides: building my own products, and helping other students build theirs.</p>
+
+                <div class="stat-strip">
+                    <div class="stat"><span class="stat-num">10</span><span class="stat-label">startup teams in my accelerator</span></div>
+                    <div class="stat"><span class="stat-num">~40</span><span class="stat-label">student founders taught weekly</span></div>
+                    <div class="stat"><span class="stat-num">6</span><span class="stat-label">robotics teams built</span></div>
+                    <div class="stat"><span class="stat-num">4</span><span class="stat-label">mentors hired &amp; trained</span></div>
+                    <div class="stat"><span class="stat-num">$4K</span><span class="stat-label">won by a team I mentored</span></div>
+                    <div class="stat"><span class="stat-num">1st</span><span class="stat-label">Ready, Set, App! with CUBO</span></div>
+                </div>
+
+                <div class="essay-grid">
+                    <article class="essay essay-wide">
+                        <span class="project-label">[ WHAT_MAKES_ME_DIFFERENT ]</span>
+                        <h3 class="essay-title">I&rsquo;ve been the builder and the mentor</h3>
+                        <p>I&rsquo;ve built and pitched my own software and hardware products (CUBO, FlightSim, Alfred), and I&rsquo;ve spent countless hours mentoring high schoolers through the same journey, first in robotics and now in startups at <strong>Capture Success</strong>, where I help students turn ideas into products and pitches. That mix of building experience and a teaching mindset is what I bring to every team.</p>
+                    </article>
+
+                    <article class="essay">
+                        <span class="project-label">[ MY_BIGGEST_WEAKNESS ]</span>
+                        <h3 class="essay-title">The two-minute fix that taught nothing</h3>
+                        <p>I&rsquo;m a natural builder, and that&rsquo;s where my mind goes first. When I started mentoring robotics, a team hit a sensor bug. I grabbed the robot and fixed it in two minutes while they watched. A few weeks later the same bug came back at competition, and the team had no idea what to do. I had solved the problem but taught them nothing.</p>
+                        <p>After that, I changed how I mentor:</p>
+                        <ol class="essay-list">
+                            <li><strong>Hands off.</strong> I point, draw diagrams, and ask questions that steer the team toward the right way of thinking, so they learn to approach similar problems too, not just that one.</li>
+                            <li><strong>Backtrack first.</strong> Before I answer, I ask: <em>What did you expect to happen? What actually happened? What have you tried?</em> Most of the time they find the answer while explaining.</li>
+                            <li><strong>Teach it back.</strong> After a big fix, one student explains to the team what changed and why. If they can&rsquo;t, we run the process again together.</li>
+                        </ol>
+                    </article>
+
+                    <article class="essay">
+                        <span class="project-label">[ WHERE_I_LEARNED_IT ]</span>
+                        <h3 class="essay-title">Guiding, not giving answers</h3>
+                        <p>I first learned this teaching robotics to <strong>kids with special needs</strong>. Giving them the answer never worked. They only learned when they figured it out themselves, with me guiding. I use the same approach with my teams at Capture Success. I want students to leave knowing how to solve the problem, not just holding a finished project.</p>
+                        <p>Last year my team and I won <strong>1st place at Ready, Set, App!</strong> with CUBO, and we wouldn&rsquo;t have gotten there without <strong>Noga, our mentor</strong>. She knew when to step in and when to let us figure things out. She set up one of the most efficient team systems I&rsquo;ve ever seen but rarely solved problems herself. She kept the focus on solving as a team, and I carry that into how I mentor.</p>
+                    </article>
+
+                    <article class="essay">
+                        <span class="project-label">[ WHEN_STUDENTS_BUILD_WITH_AI ]</span>
+                        <h3 class="essay-title">Treat the AI-built app like a textbook</h3>
+                        <p>Real understanding of code isn&rsquo;t memorizing syntax. It&rsquo;s knowing the parts of a program, how they connect and communicate, and how they work. So I have students walk <em>backwards</em> through their AI-built app:</p>
+                        <ul class="essay-list">
+                            <li><strong>Predict, then run.</strong> Before running each part of their code, they predict what it does, then check.</li>
+                            <li><strong>Record a walkthrough.</strong> A short screen-share explaining each main file in their own words. Any part they can&rsquo;t explain shows exactly what to learn next.</li>
+                            <li><strong>One feature at a time.</strong> No more &ldquo;do it all&rdquo; prompts. They can&rsquo;t accept a change until they can explain it.</li>
+                        </ul>
+                        <p>At Capture Success, judges caught that one of my teams didn&rsquo;t understand the software behind their hardware. So I built a layer into their coding agent that scans their whole GitHub, walks them through an <strong>interactive simulation of how each part of their software works</strong>, and quizzes them with short-answer questions to check understanding.</p>
+                    </article>
+
+                    <article class="essay">
+                        <span class="project-label">[ WHEN_A_TEAM_GOES_QUIET ]</span>
+                        <h3 class="essay-title">Silence usually means embarrassment</h3>
+                        <p>I assume silence comes from embarrassment, not laziness. Teams that fall behind often go quiet because they don&rsquo;t want to admit it. So instead of another &ldquo;just checking in,&rdquo; I send a friendly, no-pressure reset that makes replying easy:</p>
+                        <blockquote class="essay-quote">&ldquo;Reply yes for a quick 10-minute call this week. Or I can send a new plan, or just let me know if you&rsquo;re busy and need more time.&rdquo;</blockquote>
+                        <p>If that doesn&rsquo;t work, I reach out to each student one-on-one, because in a group chat everyone assumes someone else will answer. Once we reconnect, I break the project into one small task each person can finish in a couple of days.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Toolkit Page -->
+        <section class="page" id="toolkit">
+            <div class="projects-container">
+                <div class="page-header">
+                    <span class="header-prefix">/ </span>
+                    <h2 class="page-title">A I &nbsp; T O O L K I T</h2>
+                </div>
+                <p class="page-desc">How I use AI across the whole app-development cycle, and the tools I recommend to the teams I mentor.</p>
+
+                <div class="cycle">
+                    <div class="cycle-step">
+                        <span class="cycle-num">01</span>
+                        <h3 class="cycle-title">Brainstorm</h3>
+                        <p>AI removes what I call <strong>idea blindness</strong>: when you really believe in an idea, it&rsquo;s hard to see its holes, and getting professionals to poke at it takes forever. I use Jake Schincariol&rsquo;s <strong>&ldquo;The Arena&rdquo;</strong> skill to assign up to 100 Claude agents the roles of different professionals. They spar with the idea one by one and hand back every loophole, problem, and future risk to consider.</p>
+                    </div>
+                    <div class="cycle-step">
+                        <span class="cycle-num">02</span>
+                        <h3 class="cycle-title">Design</h3>
+                        <p>Designing a product takes a lot of research. With browser-based AI agents like Cowork, I send agents to deep-dive many sources at once on the niches I&rsquo;ve already found and pull out what matters. That leaves me more time for the creative thinking, the part AI can&rsquo;t automate.</p>
+                    </div>
+                    <div class="cycle-step">
+                        <span class="cycle-num">03</span>
+                        <h3 class="cycle-title">Build</h3>
+                        <p>I use <strong>Ghidra</strong> to study existing UIs and app modules, have AI recreate those patterns, and fit them into my app. That avoids the generic &ldquo;AI slop&rdquo; look while AI still writes the interface code. Repetitive work like wiring a new module through every file mostly disappears.</p>
+                    </div>
+                    <div class="cycle-step">
+                        <span class="cycle-num">04</span>
+                        <h3 class="cycle-title">Test</h3>
+                        <p>Before AI, every feature was tested by hand, and linked features meant testing every possible scenario. Bugs easily slipped into public releases. Now AI runs the full test suite, explores scenarios on its own, and reports bugs back to me so I can start debugging.</p>
+                    </div>
+                    <div class="cycle-step">
+                        <span class="cycle-num">05</span>
+                        <h3 class="cycle-title">Improve</h3>
+                        <p>Together these steps form the app-development cycle, and AI speeds up every one of them. It also automates the repetitive work around improving an app: analyzing customer feedback, researching what customers ask for, and shipping updates faster.</p>
+                    </div>
+                </div>
+
+                <div class="other-header tools-header"><span class="project-label">[ TOOLS_I_RECOMMEND ]</span><h3 class="other-title">Tools I recommend to student teams</h3></div>
+                <div class="tool-grid">
+                    <a href="https://github.com/obra/superpowers" class="tool-card tool-fav" target="_blank" rel="noopener">
+                        <div class="tool-head"><img src="assets/tools/superpowers.png" alt="Superpowers logo" class="tool-logo tool-logo-light"><div><span class="tool-name">Superpowers <span class="other-arrow">↗</span></span><span class="tool-kind">Claude Code skill · ★ my favorite build tool</span></div></div>
+                        <p>Turns Claude Code into a full dev team with a set process: a planner questions your idea until it&rsquo;s foolproof, writes a plan, then separate agents build, test, and review each piece. It makes worktrees and subagents easy to manage, which is great for teams that have never built agent workflows.</p>
+                    </a>
+                    <a href="https://github.com/cheaper-inference/OmniRoute" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><img src="assets/tools/omniroute.png" alt="OmniRoute logo" class="tool-logo"><div><span class="tool-name">OmniRoute <span class="other-arrow">↗</span></span><span class="tool-kind">Self-hosted AI gateway · MIT</span></div></div>
+                        <p>AI credits are a real problem for students who can&rsquo;t spend hundreds on subscriptions. OmniRoute is one OpenAI-compatible endpoint in front of hundreds of providers, and it automatically falls back to another when one fails or runs out of quota. That&rsquo;s roughly 1.6 billion extra tokens a month for a team.</p>
+                    </a>
+                    <a href="https://github.com/JuliusBrussee/caveman" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><img src="assets/tools/caveman.png" alt="Caveman logo" class="tool-logo"><div><span class="tool-name">Caveman <span class="other-arrow">↗</span></span><span class="tool-kind">Claude skill · my edited version</span></div></div>
+                        <p>Claude answers in short, stripped-down sentences instead of walls of text, which saves tokens and reading time. My edit adds one rule: <strong>don&rsquo;t just agree with me</strong>. If what I ask for is wrong, Claude calls me out, so teams understand what they&rsquo;re building instead of having AI do it blindly.</p>
+                    </a>
+                    <div class="tool-card">
+                        <div class="tool-head"><span class="tool-logo tool-mono mono-arena">⚔</span><div><span class="tool-name">The Arena</span><span class="tool-kind">Claude skill · by Jake Schincariol</span></div></div>
+                        <p>Assign up to 100 Claude agents the roles of different professionals and have them spar with your idea one at a time. It&rsquo;s the fastest way I know to find the loopholes in an idea you&rsquo;re too close to see.</p>
+                    </div>
+                    <a href="https://grep.app" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><span class="tool-logo tool-mono mono-grep">.*</span><div><span class="tool-name">grep.app <span class="other-arrow">↗</span></span><span class="tool-kind">Code search engine · free</span></div></div>
+                        <p>Searches over a million public GitHub repos at once, with filters for language, repo, and path, plus regex. Teams use it to find real examples of the modules they want to add to their app.</p>
+                    </a>
+                    <a href="https://github.com/NationalSecurityAgency/ghidra" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><img src="assets/tools/ghidra.png" alt="Ghidra logo" class="tool-logo"><div><span class="tool-name">Ghidra <span class="other-arrow">↗</span></span><span class="tool-kind">Reverse-engineering suite · NSA, open source</span></div></div>
+                        <p>Turns compiled code (like the native libraries inside an APK) back into readable assembly and C-like pseudocode. Great for understanding how software you admire actually works, instead of guessing at inefficient methods.</p>
+                    </a>
+                    <a href="https://github.com/skylot/jadx" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><img src="assets/tools/jadx.png" alt="JADX logo" class="tool-logo"><div><span class="tool-name">JADX <span class="other-arrow">↗</span></span><span class="tool-kind">Android decompiler · free</span></div></div>
+                        <p>Opens an Android APK and decompiles it into readable Java/Kotlin-style code, so you can browse its screens, logic, and resources like a normal project. Good for seeing how high-level apps approach the problems you&rsquo;re solving.</p>
+                    </a>
+                    <a href="https://www.hopperapp.com/" class="tool-card" target="_blank" rel="noopener">
+                        <div class="tool-head"><span class="tool-logo tool-mono mono-hopper">H</span><div><span class="tool-name">Hopper <span class="other-arrow">↗</span></span><span class="tool-kind">iOS / macOS disassembler</span></div></div>
+                        <p>Like Ghidra, but focused on iOS and Mac. It shows compiled app binaries as assembly and readable pseudocode. Useful when a team wants to learn how great iOS apps structure their code.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- About Page -->
         <section class="page" id="about">
             <div class="about-container">
@@ -470,7 +713,7 @@
                             <img src="assets/headshot.jpg" alt="Dhruva Valluru">
                         </div>
                         <h3 class="profile-name">Dhruva Valluru</h3>
-                        <p class="profile-role">Founder @ CUBO</p>
+                        <p class="profile-role">Founder @ CUBO &amp; Capture Success</p>
                         <div class="profile-socials">
                             <a href="mailto:dhruva.valluru@gmail.com" class="social-icon social-gmail" title="Gmail">
                                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 18h-2V9.25L12 13 6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
@@ -485,9 +728,29 @@
                     </div>
 
                     <div class="about-bio">
-                        <p>AKA the youngest in CES history to present at the ripe age of 15 — I'm currently in North Carolina finishing high school while building <strong>CUBO</strong>, a driver-safety hardware startup using edge AI to reduce distracted driving.</p>
-                        <p>In the past, I've spent time building EEG-based neurological prediction systems with Weill Cornell, a natural-language-driven flight simulator on JSBSim and Unreal Engine 5, low-cost hardware prototypes, and robotics projects. I also co-founded <strong>Capture Success</strong> to convince more students to build cool things.</p>
-                        <p>I've recently become increasingly interested in doing cool AI stuff — especially where AI meets hardware, safety, research, and real-world products people can actually use.</p>
+                        <p>AKA the youngest in CES history to present at the ripe age of 15. I'm currently in North Carolina finishing high school while building <strong>CUBO</strong>, a driver-safety startup using liquid neural networks on edge hardware to stop distracted driving. Our team won <strong>1st place at Ready, Set, App!</strong></p>
+                        <p>I've built an agentic flight-simulation system for synthetic AI data under a Department of War&ndash;funded ISL lab, EEG seizure-prediction research with Weill Cornell, and <strong>Alfred</strong>, a Jarvis-style assistant that controls your devices (my favorite project).</p>
+                        <p>I also love helping other students build. I founded <strong>Capture Success</strong>, a free startup accelerator for high schoolers in RTP, and before that a robotics mentoring business with 6 competitive teams. I'm a former state robotics champion.</p>
+
+                        <div class="about-block">
+                            <span class="project-label">[ RELEVANT_COURSEWORK ]</span>
+                            <div class="course-list">
+                                <div class="course"><span class="course-name">AP Computer Science</span><span class="course-grade">AP Score: 5</span></div>
+                                <div class="course"><span class="course-name">Honors Computer Science</span><span class="course-grade">Grade: 96</span></div>
+                            </div>
+                        </div>
+
+                        <div class="about-block">
+                            <span class="project-label">[ HIGHLIGHTS ]</span>
+                            <ul class="highlight-list">
+                                <li>1st place, Ready, Set, App! (CUBO)</li>
+                                <li>Youngest presenter in CES history (age 15)</li>
+                                <li>Former state robotics champion</li>
+                                <li>Mentored by a NASA Goddard engineer on FlightSim (ISL lab)</li>
+                                <li>A Capture Success team I mentored won $4,000 at a pitch competition</li>
+                            </ul>
+                        </div>
+
                         <p class="contact-line">Feel free to reach out about AI, startups, hardware, robotics, research, or anything interesting at <a href="mailto:dhruva.valluru@gmail.com">dhruva.valluru@gmail.com</a></p>
                     </div>
                 </div>
